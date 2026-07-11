@@ -38,7 +38,7 @@ the actual balls grow more slowly than this idealized tree.
 
 ## Exact quotient search
 
-[`src/optimal_number.cpp`](../src/optimal_number.cpp) performs multi-source
+[`src/optimal_number.rs`](../src/optimal_number.rs) performs multi-source
 breadth-first search on a projection retaining:
 
 - all three balls of the odd-sized color class; and

@@ -9,9 +9,10 @@ platforms = ["osx-arm64", "osx-64", "linux-64"]
 analyze = "gap -q gap/analyze.g"
 test = "gap -q gap/test.g"
 repl = "gap -q"
-build-optimal = "c++ -std=c++20 -O3 -DNDEBUG src/optimal_number.cpp -o .pixi/optimal-number"
+build-optimal = "rustc --edition=2024 -C opt-level=3 -D warnings src/optimal_number.rs -o .pixi/optimal-number"
 optimal = { cmd = ".pixi/optimal-number", depends-on = ["build-optimal"] }
 test-optimal = { cmd = ".pixi/optimal-number --self-test", depends-on = ["build-optimal"] }
 
 [dependencies]
 gap = "*"
+rust = "*"
