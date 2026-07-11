@@ -1,15 +1,16 @@
 # A compact Star Tenbillion solution
 
-The Pedro Luis solution uses three reusable algorithms. A method attributed to
+The [Pedro Luis solution](three-algorithm-solution.md) uses three reusable
+algorithms. A method attributed to
 Naoaki Takashima showed that one three-cycle is enough. An exhaustive GAP
 search finds a shorter three-cycle with a simple mirrored pattern.
 
 ## One algorithm
 
-`T` means the top disc with the core up; `b` means the bottom disc with the
-core pushed down. The suffix `l` or `r` means one fifth-turn left or right.
-A doubled suffix such as `ll` or `rr` means two consecutive clicks. Moving the
-core between uppercase and lowercase moves is implicit.
+Moves and positions follow the [project notation](notation.md); recall that
+`T` is the top disc with the core up, `b` is the bottom disc with the core
+pushed down, and a doubled suffix such as `ll` or `rr` means two consecutive
+clicks.
 
 In this notation, use
 
@@ -57,34 +58,11 @@ two. A second exhaustive pass finds no pure 3-cycle through depth 7, so eight
 clicks is optimal too. This local result does not imply that using a shortest
 3-cycle minimizes an entire solve.
 
-## Position and color convention
+## Cap and row 1 first
 
-Hold the puzzle with the core up. Looking down from above, name the columns
-`A B C D E` in the direction of a left disc turn; `C` is the front column.
-Rows are numbered from the bottom:
-
-```text
-          A     B     C     D     E
-row 5    A5          C5          E5       three cap positions
-row 4    A4    B4    C4    D4    E4
-row 3    A3    B3    C3    D3    E3
-row 2    A2    B2    C2    D2    E2
-row 1    A1    B1    C1    D1    E1       bottom row
-```
-
-![The 23 positions and the four disc/core generators](positions-and-moves.svg)
-
-The solved cap contains the three balls of the color that occurs only three
-times. Each other color occurs four times and fills rows 1–4 of one column.
-The five column colors are interchangeable, so the bottom row can define the
-answer. For example, if it reads
-
-```text
-A1=red  B1=blue  C1=green  D1=yellow  E1=orange,
-```
-
-then the target is red in `A2 A3 A4`, blue in `B2 B3 B4`, and so on. There is
-no need to reproduce a factory color order.
+The column/row names and the solved-state convention are defined in the
+[project notation](notation.md); in particular the bottom row chooses each
+column's target color.
 
 First put the three odd-color balls in the cap and arrange row 1 to contain one
 ball of each remaining color. This is the preliminary, intuitive part of the

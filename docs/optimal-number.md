@@ -26,7 +26,8 @@ There are
 23! / (3! (4!)^5 5!) = 4,509,264,634,875
 ```
 
-color-equivalence classes. A graph of maximum degree `d` has at most
+color-equivalence classes (derived in the
+[group-structure note](group-structure.md)). A graph of maximum degree `d` has at most
 
 ```text
 1 + d ((d - 1)^r - 1) / (d - 2)
@@ -98,8 +99,8 @@ and the tracked four-ball color at `{3,4,6,7}`.
 | States | 1,303,368 | 1,794,771 | 2,006,085 | 1,553,772 | 785,668 | 176,054 | 8,352 | 549 |
 
 One distance-15 pattern has the three-ball color at positions `{6,21,22}` and
-the tracked four-ball color at `{1,2,5,8}`. Position numbers are shown in the
-[position and move diagram](positions-and-moves.svg).
+the tracked four-ball color at `{1,2,5,8}`. Position numbers follow the
+[project notation](notation.md).
 
 ## What remains unknown
 
