@@ -1,0 +1,14 @@
+[workspace]
+name = "star-tenbillion"
+version = "0.1.0"
+description = "GAP analysis and solution guide for Nintendo's Star Tenbillion"
+channels = ["conda-forge"]
+platforms = ["osx-arm64", "osx-64", "linux-64"]
+
+[tasks]
+analyze = "gap -q gap/analyze.g"
+test = "gap -q gap/test.g"
+repl = "gap -q"
+
+[dependencies]
+gap = "*"
