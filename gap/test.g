@@ -15,6 +15,15 @@ Assert(0, NrMovedPoints(top5) = 5);
 Assert(0, NrMovedPoints(bottom5) = 5);
 Assert(0, NrMovedPoints(nineCycle) = 9);
 
+Assert(0, Order(compactStep) = 6);
+Assert(0, compactStep = (4,9,18)(7,12)(11,15));
+Assert(0, Order(compact3) = 3);
+Assert(0, NrMovedPoints(compact3) = 3);
+Assert(0, compact3 = (4,18,9));
+Assert(0,
+  NormalClosure(StarTenbillionGroup, Group(compact3))
+    = StarTenbillionGroup);
+
 Assert(0,
   Factorial(23) / (Factorial(3) * Factorial(4)^5) = 541111756185000);
 Assert(0,

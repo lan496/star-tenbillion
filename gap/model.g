@@ -23,3 +23,11 @@ nineStep := t^-1 * b^-1 * T * B;     # tr br Tl Bl
 top5 := top5step^7;
 bottom5 := bottom5step^7;
 nineCycle := nineStep^11;
+
+# Takashima-inspired one-algorithm solution.  One pass has a 3-cycle and two
+# transpositions; squaring it cancels the transpositions, leaving a pure
+# 3-cycle.  In move notation:
+#   compactStep = tl Tr bl Br Tl Bl tr br
+#   compact3    = compactStep, repeated twice
+compactStep := t * T^-1 * b * B^-1 * T * B * t^-1 * b^-1;
+compact3 := compactStep^2;

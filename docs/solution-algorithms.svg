@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="760" viewBox="0 0 1080 760" role="img" aria-labelledby="title desc">
+  <title id="title">The three Star Tenbillion solution algorithms</title>
+  <desc id="desc">Directed cycle diagrams for the nine-cycle, top five-cycle, and bottom five-cycle used in the solution.</desc>
+  <defs>
+    <style>
+      .title { font: 700 28px system-ui, sans-serif; fill: #172033; }
+      .heading { font: 700 21px system-ui, sans-serif; fill: #172033; }
+      .sequence { font: 700 18px ui-monospace, monospace; fill: #31405c; }
+      .note { font: 14px system-ui, sans-serif; fill: #58657d; }
+      .number { font: 700 17px ui-monospace, monospace; text-anchor: middle; dominant-baseline: central; fill: #172033; }
+      .arrow9 { stroke: #3478d4; stroke-width: 4; fill: none; marker-end: url(#arrow9); }
+      .arrowTop { stroke: #35965c; stroke-width: 4; fill: none; marker-end: url(#arrowTop); }
+      .arrowBottom { stroke: #dc7a24; stroke-width: 4; fill: none; marker-end: url(#arrowBottom); }
+    </style>
+    <marker id="arrow9" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#3478d4"/></marker>
+    <marker id="arrowTop" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#35965c"/></marker>
+    <marker id="arrowBottom" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#dc7a24"/></marker>
+  </defs>
+
+  <rect width="1080" height="760" rx="24" fill="#f7f9fc"/>
+  <text x="42" y="48" class="title">Three reusable solution algorithms</text>
+  <text x="42" y="76" class="note">Each diagram shows the effect after completing all repetitions; reverse every move to follow the arrows backward.</text>
+
+  <rect x="35" y="100" width="1010" height="330" rx="18" fill="#ffffff" stroke="#dbe2ee"/>
+  <text x="62" y="136" class="heading">9-cycle</text>
+  <text x="62" y="166" class="sequence">(1 9 19 15 5 4 14 20 10)</text>
+  <rect x="760" y="116" width="250" height="62" rx="12" fill="#eaf3ff"/>
+  <text x="885" y="142" class="sequence" text-anchor="middle">tr br Tl Bl</text>
+  <text x="885" y="163" class="note" text-anchor="middle">repeat 11 times</text>
+
+  <g class="arrow9">
+    <path d="M562 196 L642 211"/><path d="M692 229 L752 268"/><path d="M778 302 L756 349"/>
+    <path d="M726 376 L646 392"/><path d="M594 399 L486 399"/><path d="M434 392 L354 376"/>
+    <path d="M324 349 L302 302"/><path d="M328 268 L388 229"/><path d="M438 211 L518 196"/>
+  </g>
+  <g fill="#ffffff" stroke="#3478d4" stroke-width="3">
+    <circle cx="540" cy="192" r="25"/><circle cx="670" cy="217" r="25"/><circle cx="775" cy="285" r="25"/>
+    <circle cx="750" cy="365" r="25"/><circle cx="620" cy="398" r="25"/><circle cx="460" cy="398" r="25"/>
+    <circle cx="330" cy="365" r="25"/><circle cx="305" cy="285" r="25"/><circle cx="410" cy="217" r="25"/>
+  </g>
+  <g class="number">
+    <text x="540" y="192">1</text><text x="670" y="217">9</text><text x="775" y="285">19</text>
+    <text x="750" y="365">15</text><text x="620" y="398">5</text><text x="460" y="398">4</text>
+    <text x="330" y="365">14</text><text x="305" y="285">20</text><text x="410" y="217">10</text>
+  </g>
+  <rect x="35" y="455" width="495" height="265" rx="18" fill="#ffffff" stroke="#dbe2ee"/>
+  <text x="62" y="491" class="heading">Top 5-cycle</text>
+  <rect x="270" y="471" width="230" height="58" rx="12" fill="#eef9f2"/>
+  <text x="385" y="495" class="sequence" text-anchor="middle">tr Tl</text>
+  <text x="385" y="515" class="note" text-anchor="middle">repeat 7 times</text>
+  <g class="arrowTop">
+    <path d="M281 554 L350 586"/><path d="M376 615 L349 665"/><path d="M313 684 L222 684"/><path d="M186 665 L159 615"/><path d="M185 586 L254 554"/>
+  </g>
+  <g fill="#ffffff" stroke="#35965c" stroke-width="3">
+    <circle cx="268" cy="548" r="24"/><circle cx="365" cy="593" r="24"/><circle cx="337" cy="678" r="24"/>
+    <circle cx="198" cy="678" r="24"/><circle cx="170" cy="593" r="24"/>
+  </g>
+  <g class="number">
+    <text x="268" y="548">1</text><text x="365" y="593">9</text><text x="337" y="678">5</text><text x="198" y="678">4</text><text x="170" y="593">10</text>
+  </g>
+
+  <rect x="550" y="455" width="495" height="265" rx="18" fill="#ffffff" stroke="#dbe2ee"/>
+  <text x="577" y="491" class="heading">Bottom 5-cycle</text>
+  <rect x="785" y="471" width="230" height="58" rx="12" fill="#fff1e5"/>
+  <text x="900" y="495" class="sequence" text-anchor="middle">br Bl</text>
+  <text x="900" y="515" class="note" text-anchor="middle">repeat 7 times</text>
+  <g class="arrowBottom">
+    <path d="M796 554 L865 586"/><path d="M891 615 L864 665"/><path d="M828 684 L737 684"/><path d="M701 665 L674 615"/><path d="M700 586 L769 554"/>
+  </g>
+  <g fill="#ffffff" stroke="#dc7a24" stroke-width="3">
+    <circle cx="783" cy="548" r="24"/><circle cx="880" cy="593" r="24"/><circle cx="852" cy="678" r="24"/>
+    <circle cx="713" cy="678" r="24"/><circle cx="685" cy="593" r="24"/>
+  </g>
+  <g class="number">
+    <text x="783" y="548">9</text><text x="880" y="593">19</text><text x="852" y="678">15</text><text x="713" y="678">14</text><text x="685" y="593">20</text>
+  </g>
+</svg>

@@ -15,6 +15,12 @@ Print("  tr Tl, repeated 7:       ", top5, "\n");
 Print("  br Bl, repeated 7:       ", bottom5, "\n");
 Print("  tr br Tl Bl, repeated 11: ", nineCycle, "\n\n");
 
+Print("Compact one-algorithm solution\n");
+Print("  tl Tr bl Br Tl Bl tr br:     ", compactStep, "\n");
+Print("  repeated twice:              ", compact3, "\n");
+Print("  normal closure is A_23:      ",
+  NormalClosure(G, Group(compact3)) = G, "\n\n");
+
 allColoredStates := Factorial(23) / (Factorial(3) * Factorial(4)^5);
 statesModuloColorNames := allColoredStates / Factorial(5);
 Print("Colored positions (fixed color names): ", allColoredStates, "\n");

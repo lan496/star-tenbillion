@@ -33,7 +33,28 @@ the normal position after a lower-case move sequence.
 
 ![Unwrapped map of the 23 ball positions and the four move generators](docs/positions-and-moves.svg)
 
-## A solution
+## A compact solution
+
+The Takashima-inspired method needs only one algorithm:
+
+```text
+C = (tl Tr bl Br Tl Bl tr br), repeated twice
+```
+
+GAP verifies that `C = (4,18,9)`: exactly three balls cycle and the other 20
+stay fixed. Arrange the three working locations with ordinary disc turns,
+apply `C` once or twice to insert the desired ball, then undo the setup turns.
+First place the odd-color cap balls, make the bottom row contain all five
+colors, and build the remaining three rows upward while preserving completed
+rows. Run `pixi run compact` for the proof.
+
+![The compact one-algorithm three-cycle solution](docs/compact-solution.svg)
+
+See the [compact-solution study](docs/compact-solution.md) for the GAP
+factorization, the row-by-row procedure, and the distinction between a compact
+memory method and a move-optimal solution.
+
+## Three-algorithm solution
 
 Three short algorithms do almost all of the work:
 
@@ -42,6 +63,8 @@ Three short algorithms do almost all of the work:
 | 9-cycle | `tr br Tl Bl` 11 times | Cycles the nine balls in two working columns by two places |
 | top 5-cycle | `tr Tl` 7 times | Cycles the five balls in the upper part of the working columns by two places |
 | bottom 5-cycle | `br Bl` 7 times | Cycles the five balls in the lower part of the working columns by two places |
+
+![Directed cycles for the three reusable solution algorithms](docs/solution-algorithms.svg)
 
 Their inverses run the same cycles backwards. These give the following
 systematic solve.
@@ -62,6 +85,8 @@ systematic solve.
    to move it to `C2`. Repeat until all four balls of the color are in the
    bottom two rows. Use the top 5-cycle to put the remaining odd-colored ball
    at `B3`, then use the 9-cycle to finish both columns.
+
+![Four schematic milestones in the column-by-column solution](docs/solution-phases.svg)
 
 The algorithms and this column-by-column procedure are the compact solution
 published by Pedro Luis and documented by Jaap Scherphuis. The GAP model checks
@@ -124,5 +149,6 @@ for the metrics, proof, complete distributions, and remaining gap.
 
 - [Star Tenbillion overview](https://nintendo.fandom.com/wiki/Star_Tenbillion)
 - [Puzzle mechanics and solution](https://www.jaapsch.net/puzzles/nintendo.htm)
+- [Takashima one-algorithm solution](https://www.math.rwth-aachen.de/~Martin.Schoenert/Cube-Lovers/Stan_Isaacs__Ten_Billion_Puzzle_%28the_Barrel%29.html)
 - [David Singmaster's group/counting discussion](https://www.jaapsch.net/puzzles/cubic2.htm)
 - [Nintendo Tumbler Puzzle overview](https://en.wikipedia.org/wiki/Nintendo_Tumbler_Puzzle)
