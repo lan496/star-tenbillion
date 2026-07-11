@@ -21,6 +21,9 @@ Assert(0, takashima3 = (4,18,9));
 Assert(0, Order(compact3) = 3);
 Assert(0, NrMovedPoints(compact3) = 3);
 Assert(0, compact3 = (11,13,18));
+Assert(0, columnInsert3 = (4,18,11));
+# Worked B2 insertion from docs/compact-solution.md.
+Assert(0, B^-2 * T^2 * columnInsert3 * T^-2 * B^2 = (7,15,9));
 Assert(0,
   NormalClosure(StarTenbillionGroup, Group(compact3))
     = StarTenbillionGroup);

@@ -34,3 +34,7 @@ takashima3 := takashimaStep^2;
 # The generator families alternate T,b,T | b,T,b; the turn sizes are the
 # palindrome 1,2,1 in each half, with left turns followed by right turns.
 compact3 := T * b^2 * T * b^-1 * T^-2 * b^-1;
+
+# Conjugate used by the column-by-column insertion method:
+#   K = tr C tl = (A4,E2,C3) = (4,18,11)
+columnInsert3 := t^-1 * compact3 * t;

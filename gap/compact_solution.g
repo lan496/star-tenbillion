@@ -9,6 +9,7 @@ Print("  mnemonic:       T-b-T left 1-2-1; b-T-b right 1-2-1\n");
 Print("  permutation:    ", compact3, "\n");
 Print("  moved balls:    ", NrMovedPoints(compact3), "\n");
 Print("  order:          ", Order(compact3), "\n");
+Print("  tr C tl:        ", columnInsert3, "\n");
 Print("  normal closure: ", StructureDescription(closure), "\n");
 Print("  closure = A_23: ", closure = G, "\n");
 Print("\nHistorical eight-click word, repeated twice\n");
