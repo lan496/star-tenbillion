@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="680" viewBox="0 0 1080 680" role="img" aria-labelledby="title desc">
+  <title id="title">The eight Star Tenbillion one-click moves</title>
+  <desc id="desc">A four by two table for the move notation pattern T B t b followed by l or r, showing disc, core position, direction, inverse pairing, and permutation cycles.</desc>
+  <defs>
+    <style>
+      .title { font: 700 28px system-ui, sans-serif; fill: #172033; }
+      .heading { font: 700 19px system-ui, sans-serif; fill: #172033; text-anchor: middle; }
+      .rowName { font: 800 25px ui-monospace, monospace; fill: #ffffff; text-anchor: middle; dominant-baseline: central; }
+      .rowTitle { font: 700 18px system-ui, sans-serif; fill: #172033; }
+      .note { font: 14px system-ui, sans-serif; fill: #58657d; }
+      .move { font: 800 23px ui-monospace, monospace; fill: #172033; text-anchor: middle; dominant-baseline: central; }
+      .cycle { font: 600 15px ui-monospace, monospace; fill: #31405c; }
+      .inverse { font: 14px system-ui, sans-serif; fill: #58657d; }
+      .leftArrow { stroke: #3478d4; stroke-width: 4; fill: none; marker-end: url(#leftArrow); }
+      .rightArrow { stroke: #7851b8; stroke-width: 4; fill: none; marker-end: url(#rightArrow); }
+    </style>
+    <marker id="leftArrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M8 0 L0 4 L8 8 Z" fill="#3478d4"/></marker>
+    <marker id="rightArrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#7851b8"/></marker>
+  </defs>
+
+  <rect width="1080" height="680" rx="24" fill="#f7f9fc"/>
+  <text x="42" y="48" class="title">Eight one-click moves: [TBtb][lr]</text>
+  <text x="42" y="76" class="note">First character: disc + core position. Second character: direction. Every right move is the inverse of its left partner.</text>
+
+  <text x="485" y="119" class="heading">l · left one column</text>
+  <text x="855" y="119" class="heading">r · right one column</text>
+
+  <!-- Row labels -->
+  <g>
+    <rect x="35" y="145" width="235" height="105" rx="16" fill="#eaf3ff" stroke="#9ac1ef"/>
+    <circle cx="75" cy="184" r="25" fill="#3478d4"/><text x="75" y="184" class="rowName">T</text>
+    <text x="112" y="178" class="rowTitle">upper disc</text><text x="112" y="202" class="note">core up</text>
+
+    <rect x="35" y="265" width="235" height="105" rx="16" fill="#fff1e5" stroke="#efb27c"/>
+    <circle cx="75" cy="304" r="25" fill="#dc7a24"/><text x="75" y="304" class="rowName">B</text>
+    <text x="112" y="298" class="rowTitle">lower disc</text><text x="112" y="322" class="note">core up</text>
+
+    <rect x="35" y="385" width="235" height="105" rx="16" fill="#eef9f2" stroke="#99d5ae"/>
+    <circle cx="75" cy="424" r="25" fill="#35965c"/><text x="75" y="424" class="rowName">t</text>
+    <text x="112" y="418" class="rowTitle">upper disc</text><text x="112" y="442" class="note">core down</text>
+
+    <rect x="35" y="505" width="235" height="105" rx="16" fill="#f3edff" stroke="#c6b1e8"/>
+    <circle cx="75" cy="544" r="25" fill="#7851b8"/><text x="75" y="544" class="rowName">b</text>
+    <text x="112" y="538" class="rowTitle">lower disc</text><text x="112" y="562" class="note">core down</text>
+  </g>
+
+  <!-- T row -->
+  <g>
+    <rect x="290" y="145" width="360" height="105" rx="16" fill="#ffffff" stroke="#dbe2ee"/>
+    <circle cx="330" cy="185" r="25" fill="#eaf3ff" stroke="#3478d4" stroke-width="2"/><text x="330" y="185" class="move">Tl</text>
+    <text x="370" y="174" class="cycle">(4 5 6 7 8)</text><text x="370" y="198" class="cycle">(9 10 11 12 13)</text>
+    <path d="M615 224 L570 224" class="leftArrow"/>
+
+    <rect x="670" y="145" width="375" height="105" rx="16" fill="#ffffff" stroke="#dbe2ee"/>
+    <circle cx="710" cy="185" r="25" fill="#f3edff" stroke="#7851b8" stroke-width="2"/><text x="710" y="185" class="move">Tr</text>
+    <text x="750" y="174" class="cycle">(8 7 6 5 4)</text><text x="750" y="198" class="cycle">(13 12 11 10 9)</text>
+    <text x="750" y="228" class="inverse">Tr = Tl inverse</text><path d="M970 224 L1015 224" class="rightArrow"/>
+  </g>
+
+  <!-- B row -->
+  <g>
+    <rect x="290" y="265" width="360" height="105" rx="16" fill="#ffffff" stroke="#dbe2ee"/>
+    <circle cx="330" cy="305" r="25" fill="#fff1e5" stroke="#dc7a24" stroke-width="2"/><text x="330" y="305" class="move">Bl</text>
+    <text x="370" y="294" class="cycle">(14 15 16 17 18)</text><text x="370" y="318" class="cycle">(19 20 21 22 23)</text>
+    <path d="M615 344 L570 344" class="leftArrow"/>
+
+    <rect x="670" y="265" width="375" height="105" rx="16" fill="#ffffff" stroke="#dbe2ee"/>
+    <circle cx="710" cy="305" r="25" fill="#f3edff" stroke="#7851b8" stroke-width="2"/><text x="710" y="305" class="move">Br</text>
+    <text x="750" y="294" class="cycle">(18 17 16 15 14)</text><text x="750" y="318" class="cycle">(23 22 21 20 19)</text>
+    <text x="750" y="348" class="inverse">Br = Bl inverse</text><path d="M970 344 L1015 344" class="rightArrow"/>
+  </g>
+
+  <!-- t row -->
+  <g>
+    <rect x="290" y="385" width="360" height="105" rx="16" fill="#ffffff" stroke="#dbe2ee"/>
+    <circle cx="330" cy="425" r="25" fill="#eef9f2" stroke="#35965c" stroke-width="2"/><text x="330" y="425" class="move">tl</text>
+    <text x="370" y="414" class="cycle">(1 5 2 3 8)</text><text x="370" y="438" class="cycle">(4 10 6 7 13)</text>
+    <path d="M615 464 L570 464" class="leftArrow"/>
+
+    <rect x="670" y="385" width="375" height="105" rx="16" fill="#ffffff" stroke="#dbe2ee"/>
+    <circle cx="710" cy="425" r="25" fill="#f3edff" stroke="#7851b8" stroke-width="2"/><text x="710" y="425" class="move">tr</text>
+    <text x="750" y="414" class="cycle">(8 3 2 5 1)</text><text x="750" y="438" class="cycle">(13 7 6 10 4)</text>
+    <text x="750" y="468" class="inverse">tr = tl inverse</text><path d="M970 464 L1015 464" class="rightArrow"/>
+  </g>
+
+  <!-- b row -->
+  <g>
+    <rect x="290" y="505" width="360" height="105" rx="16" fill="#ffffff" stroke="#dbe2ee"/>
+    <circle cx="330" cy="545" r="25" fill="#f3edff" stroke="#7851b8" stroke-width="2"/><text x="330" y="545" class="move">bl</text>
+    <text x="370" y="534" class="cycle">(9 15 11 12 18)</text><text x="370" y="558" class="cycle">(14 20 16 17 23)</text>
+    <path d="M615 584 L570 584" class="leftArrow"/>
+
+    <rect x="670" y="505" width="375" height="105" rx="16" fill="#ffffff" stroke="#dbe2ee"/>
+    <circle cx="710" cy="545" r="25" fill="#f3edff" stroke="#7851b8" stroke-width="2"/><text x="710" y="545" class="move">br</text>
+    <text x="750" y="534" class="cycle">(18 12 11 15 9)</text><text x="750" y="558" class="cycle">(23 17 16 20 14)</text>
+    <text x="750" y="588" class="inverse">br = bl inverse</text><path d="M970 584 L1015 584" class="rightArrow"/>
+  </g>
+
+  <text x="42" y="648" class="note">Two letters such as Tll mean two consecutive left clicks; similarly for Trr, Bll, brr, and the other combinations.</text>
+</svg>

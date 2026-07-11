@@ -25,9 +25,12 @@ bottom5 := bottom5step^7;
 nineCycle := nineStep^11;
 
 # Takashima-inspired one-algorithm solution.  One pass has a 3-cycle and two
-# transpositions; squaring it cancels the transpositions, leaving a pure
-# 3-cycle.  In move notation:
-#   compactStep = tl Tr bl Br Tl Bl tr br
-#   compact3    = compactStep, repeated twice
-compactStep := t * T^-1 * b * B^-1 * T * B * t^-1 * b^-1;
-compact3 := compactStep^2;
+# transpositions; squaring it cancels the transpositions.
+takashimaStep := t * T^-1 * b * B^-1 * T * B * t^-1 * b^-1;
+takashima3 := takashimaStep^2;
+
+# A shorter pure 3-cycle found by exhaustive FTM search through depth 6:
+#   Tl bll Tl | br Trr br
+# The generator families alternate T,b,T | b,T,b; the turn sizes are the
+# palindrome 1,2,1 in each half, with left turns followed by right turns.
+compact3 := T * b^2 * T * b^-1 * T^-2 * b^-1;

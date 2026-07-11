@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1080" height="560" viewBox="0 0 1080 560" role="img" aria-labelledby="title desc">
   <title id="title">Compact one-algorithm solution for Star Tenbillion</title>
-  <desc id="desc">The eight-turn word is repeated twice, canceling two swaps and leaving a pure three-cycle on positions 4, 18, and 9.</desc>
+  <desc id="desc">A mirrored six-move word makes a pure three-cycle on positions 11, 13, and 18.</desc>
   <defs>
     <style>
       .title { font: 700 28px system-ui, sans-serif; fill: #172033; }
@@ -15,33 +15,32 @@
   </defs>
 
   <rect width="1080" height="560" rx="24" fill="#f7f9fc"/>
-  <text x="42" y="48" class="title">Compact solution: remember one algorithm</text>
+  <text x="42" y="48" class="title">Compact solution: a mirrored 1-2-1 pattern</text>
 
   <rect x="35" y="78" width="1010" height="142" rx="18" fill="#ffffff" stroke="#dbe2ee"/>
-  <text x="62" y="113" class="heading">Perform this eight-turn word twice</text>
+  <text x="62" y="113" class="heading">Six face turns · eight fifth-turn clicks</text>
   <g transform="translate(62 137)">
     <g class="sequence" text-anchor="middle">
-      <rect x="0" y="0" width="90" height="48" rx="10" fill="#eef9f2"/><text x="45" y="25">tl</text>
-      <rect x="102" y="0" width="90" height="48" rx="10" fill="#eaf3ff"/><text x="147" y="25">Tr</text>
-      <rect x="204" y="0" width="90" height="48" rx="10" fill="#f3edff"/><text x="249" y="25">bl</text>
-      <rect x="306" y="0" width="90" height="48" rx="10" fill="#fff1e5"/><text x="351" y="25">Br</text>
-      <rect x="408" y="0" width="90" height="48" rx="10" fill="#eaf3ff"/><text x="453" y="25">Tl</text>
-      <rect x="510" y="0" width="90" height="48" rx="10" fill="#fff1e5"/><text x="555" y="25">Bl</text>
-      <rect x="612" y="0" width="90" height="48" rx="10" fill="#eef9f2"/><text x="657" y="25">tr</text>
-      <rect x="714" y="0" width="90" height="48" rx="10" fill="#f3edff"/><text x="759" y="25">br</text>
+      <rect x="0" y="0" width="120" height="48" rx="10" fill="#eaf3ff"/><text x="60" y="25">Tl</text>
+      <rect x="132" y="0" width="120" height="48" rx="10" fill="#eef9f2"/><text x="192" y="25">bll</text>
+      <rect x="264" y="0" width="120" height="48" rx="10" fill="#eaf3ff"/><text x="324" y="25">Tl</text>
+      <rect x="430" y="0" width="120" height="48" rx="10" fill="#eef9f2"/><text x="490" y="25">br</text>
+      <rect x="562" y="0" width="120" height="48" rx="10" fill="#eaf3ff"/><text x="622" y="25">Trr</text>
+      <rect x="694" y="0" width="120" height="48" rx="10" fill="#eef9f2"/><text x="754" y="25">br</text>
     </g>
-    <text x="836" y="32" class="sequence">× 2</text>
+    <path d="M407 2 L407 46" stroke="#aab5c6" stroke-width="3" stroke-dasharray="5 5"/>
+    <text x="192" y="70" class="note" text-anchor="middle">T–b–T · LEFT · 1–2–1</text>
+    <text x="622" y="70" class="note" text-anchor="middle">b–T–b · RIGHT · 1–2–1</text>
   </g>
 
   <rect x="35" y="242" width="500" height="280" rx="18" fill="#ffffff" stroke="#dbe2ee"/>
-  <text x="62" y="278" class="heading">Why two passes?</text>
+  <text x="62" y="278" class="heading">Why it sticks</text>
   <rect x="62" y="302" width="446" height="75" rx="13" fill="#f4f6fa"/>
-  <text x="82" y="331" class="math">one pass = (4 9 18)(7 12)(11 15)</text>
-  <text x="82" y="357" class="note">one 3-cycle + two swaps</text>
-  <path d="M285 386 L285 417" stroke="#8795ab" stroke-width="4" marker-end="url(#arrow)"/>
+  <text x="82" y="331" class="math">families: T b T  |  b T b</text>
+  <text x="82" y="357" class="note">the second half mirrors the first</text>
   <rect x="62" y="428" width="446" height="66" rx="13" fill="#eaf3ff"/>
-  <text x="82" y="457" class="math">two passes = (4 18 9)</text>
-  <text x="82" y="482" class="note">the swaps cancel; 20 balls stay fixed</text>
+  <text x="82" y="457" class="math">sizes: 1 2 1  |  1 2 1</text>
+  <text x="82" y="482" class="note">left first, then right; nothing else to learn</text>
 
   <rect x="555" y="242" width="490" height="280" rx="18" fill="#ffffff" stroke="#dbe2ee"/>
   <text x="582" y="278" class="heading">The reusable 3-cycle C</text>
@@ -51,6 +50,6 @@
   <g fill="#ffffff" stroke="#3478d4" stroke-width="4">
     <circle cx="710" cy="360" r="34"/><circle cx="890" cy="360" r="34"/><circle cx="800" cy="470" r="34"/>
   </g>
-  <g class="number"><text x="710" y="360">4</text><text x="890" y="360">18</text><text x="800" y="470">9</text></g>
+  <g class="number"><text x="710" y="360">11</text><text x="890" y="360">13</text><text x="800" y="470">18</text></g>
   <text x="800" y="310" class="note" text-anchor="middle">Apply once to advance; twice to reverse</text>
 </svg>

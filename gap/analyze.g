@@ -16,8 +16,8 @@ Print("  br Bl, repeated 7:       ", bottom5, "\n");
 Print("  tr br Tl Bl, repeated 11: ", nineCycle, "\n\n");
 
 Print("Compact one-algorithm solution\n");
-Print("  tl Tr bl Br Tl Bl tr br:     ", compactStep, "\n");
-Print("  repeated twice:              ", compact3, "\n");
+Print("  Tl bll Tl | br Trr br:       ", compact3, "\n");
+Print("  face turns / fifth-turns:    6 / 8\n");
 Print("  normal closure is A_23:      ",
   NormalClosure(G, Group(compact3)) = G, "\n\n");
 

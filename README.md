@@ -31,28 +31,36 @@ the bottom upward, so row 1 is the bottom and the three-ball cap is row 5.
 Moving the core between upper- and lower-case moves is implicit. Return it to
 the normal position after a lower-case move sequence.
 
+![The eight one-click moves matching the pattern TBtb followed by l or r](docs/move-notation-grid.svg)
+
 ![Unwrapped map of the 23 ball positions and the four move generators](docs/positions-and-moves.svg)
 
 ## A compact solution
 
-The Takashima-inspired method needs only one algorithm:
+The most compact reusable algorithm found is:
 
 ```text
-C = (tl Tr bl Br Tl Bl tr br), repeated twice
+C = Tl bll Tl | br Trr br
 ```
 
-GAP verifies that `C = (4,18,9)`: exactly three balls cycle and the other 20
-stay fixed. Arrange the three working locations with ordinary disc turns,
+Read it as **top-bottom-top, left 1-2-1; bottom-top-bottom, right 1-2-1**.
+GAP verifies that `C = (11,13,18)`: exactly three balls cycle and the other 20
+stay fixed. It costs six face turns or eight individual fifth-turn clicks.
+An exhaustive GAP search proves that no pure 3-cycle uses five or fewer face
+turns or seven or fewer fifth-turn clicks in this move set. Thus `C` is
+locally optimal in both metrics.
+
+Arrange the three working locations with ordinary disc turns,
 apply `C` once or twice to insert the desired ball, then undo the setup turns.
 First place the odd-color cap balls, make the bottom row contain all five
 colors, and build the remaining three rows upward while preserving completed
-rows. Run `pixi run compact` for the proof.
+rows. Run `pixi run compact` for the proof and `pixi run search-compact` for
+the minimality search.
 
 ![The compact one-algorithm three-cycle solution](docs/compact-solution.svg)
 
-See the [compact-solution study](docs/compact-solution.md) for the GAP
-factorization, the row-by-row procedure, and the distinction between a compact
-memory method and a move-optimal solution.
+See the [compact-solution study](docs/compact-solution.md) for the GAP search,
+the historical Takashima construction, and the row-by-row procedure.
 
 ## Three-algorithm solution
 
