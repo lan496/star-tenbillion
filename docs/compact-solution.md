@@ -71,6 +71,8 @@ are in row 1; use ordinary disc/core moves until the five colors are present,
 then choose their circular order. From this point onward, the cycles below
 leave the cap and row 1 fixed after every setup is undone.
 
+![Four milestones of the row-by-row solve with the single algorithm](compact-solve-phases.svg)
+
 ## Turn `C` into an insertion tool
 
 The numbered cycle `(11,13,18)` is
@@ -98,6 +100,8 @@ algorithm to memorize. One application of `K` moves the contents as follows:
 
 `K` therefore inserts a ball from `A4` into `E2`. Applying `K` twice inserts
 a ball from `C3` into `E2`. All other positions are fixed.
+
+![The insertion tool K cycles the donor A4, the destination E2, and the buffer C3](compact-insertion-tool.svg)
 
 In general, if setup turns `S` carry a destination and donor to these working
 positions, perform `S K S^-1` or `S K^2 S^-1`. Since words are executed from
@@ -140,6 +144,8 @@ Brr Tll K Trr Bll
 
 and finishes at the original orientation with blue at `B2`. Only the two
 unsolved buffer balls that shared the 3-cycle moved elsewhere.
+
+![The worked insertion Brr Tll K Trr Bll in four states](compact-worked-insertion.svg)
 
 Repeat this insertion for `A2` through `E2`. It is usually efficient to leave
 already-correct positions alone and choose donors from columns that are still

@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="620" viewBox="0 0 1080 620" role="img" aria-labelledby="title desc">
+  <title id="title">A worked insertion with the compact algorithm</title>
+  <desc id="desc">Four schematic states showing the insertion Brr Tll K Trr Bll: read the target, set up, apply K, and undo the setups.</desc>
+  <defs>
+    <style>
+      .title { font: 700 28px system-ui, sans-serif; fill: #172033; }
+      .heading { font: 700 18px system-ui, sans-serif; fill: #172033; text-anchor: middle; }
+      .note { font: 14px system-ui, sans-serif; fill: #58657d; text-anchor: middle; }
+      .column { font: 700 13px system-ui, sans-serif; fill: #58657d; text-anchor: middle; }
+      .arrow { stroke: #8795ab; stroke-width: 4; fill: none; marker-end: url(#arrow); }
+    </style>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#8795ab"/></marker>
+    <g id="board">
+      <g fill="#f0f3f8" stroke="#a9b4c7" stroke-width="2">
+        <circle cx="20" cy="20" r="14"/><circle cx="100" cy="20" r="14"/><circle cx="180" cy="20" r="14"/>
+        <circle cx="20" cy="65" r="14"/><circle cx="60" cy="65" r="14"/><circle cx="100" cy="65" r="14"/><circle cx="140" cy="65" r="14"/><circle cx="180" cy="65" r="14"/>
+        <circle cx="20" cy="105" r="14"/><circle cx="60" cy="105" r="14"/><circle cx="100" cy="105" r="14"/><circle cx="140" cy="105" r="14"/><circle cx="180" cy="105" r="14"/>
+        <circle cx="20" cy="145" r="14"/><circle cx="60" cy="145" r="14"/><circle cx="100" cy="145" r="14"/><circle cx="140" cy="145" r="14"/><circle cx="180" cy="145" r="14"/>
+        <circle cx="20" cy="185" r="14"/><circle cx="60" cy="185" r="14"/><circle cx="100" cy="185" r="14"/><circle cx="140" cy="185" r="14"/><circle cx="180" cy="185" r="14"/>
+      </g>
+      <g class="column"><text x="20" y="225">A</text><text x="60" y="225">B</text><text x="100" y="225">C</text><text x="140" y="225">D</text><text x="180" y="225">E</text></g>
+    </g>
+  </defs>
+
+  <rect width="1080" height="620" rx="24" fill="#f7f9fc"/>
+  <text x="42" y="48" class="title">Worked insertion: Brr Tll K Trr Bll</text>
+  <text x="42" y="76" class="note" style="text-anchor:start">Blue balls are the tracked color; dark grey balls are disturbed buffers; the dashed ring is the destination.</text>
+
+  <g class="arrow"><path d="M260 318 L292 318"/><path d="M520 318 L552 318"/><path d="M780 318 L812 318"/></g>
+
+  <g transform="translate(25 105)">
+    <rect width="235" height="430" rx="18" fill="#ffffff" stroke="#dbe2ee"/>
+    <text x="117" y="40" class="heading">1 &#183; Read the target</text>
+    <text x="117" y="66" class="note">The anchor B1 names the color</text>
+    <g transform="translate(27 110)"><use href="#board"/>
+      <circle cx="60" cy="185" r="14" fill="#3f7edb"/>
+      <circle cx="140" cy="65" r="14" fill="#3f7edb"/>
+      <circle cx="60" cy="145" r="17" fill="none" stroke="#dc7a24" stroke-width="3" stroke-dasharray="5 4"/>
+    </g>
+    <text x="117" y="382" class="note">B1 is blue, so B2 needs blue.</text>
+    <text x="117" y="402" class="note">A blue donor sits at D4.</text>
+  </g>
+
+  <g transform="translate(285 105)">
+    <rect width="235" height="430" rx="18" fill="#ffffff" stroke="#dbe2ee"/>
+    <text x="117" y="40" class="heading">2 &#183; Setup: Brr Tll</text>
+    <text x="117" y="66" class="note">Carry both to the work positions</text>
+    <g transform="translate(27 110)"><use href="#board"/>
+      <circle cx="180" cy="185" r="14" fill="#3f7edb"/>
+      <circle cx="20" cy="65" r="14" fill="#3f7edb"/>
+      <circle cx="180" cy="145" r="17" fill="none" stroke="#dc7a24" stroke-width="3" stroke-dasharray="5 4"/>
+    </g>
+    <text x="117" y="382" class="note">Brr takes B2 (with B1) to E2/E1.</text>
+    <text x="117" y="402" class="note">Tll takes the donor D4 to A4.</text>
+  </g>
+
+  <g transform="translate(545 105)">
+    <rect width="235" height="430" rx="18" fill="#ffffff" stroke="#dbe2ee"/>
+    <text x="117" y="40" class="heading">3 &#183; Apply K</text>
+    <text x="117" y="66" class="note">The 3-cycle inserts the donor</text>
+    <g transform="translate(27 110)"><use href="#board"/>
+      <circle cx="180" cy="185" r="14" fill="#3f7edb"/>
+      <circle cx="180" cy="145" r="14" fill="#3f7edb"/>
+      <circle cx="20" cy="65" r="14" fill="#d9dee7" stroke="#8795ab" stroke-width="2"/>
+      <circle cx="100" cy="105" r="14" fill="#d9dee7" stroke="#8795ab" stroke-width="2"/>
+    </g>
+    <text x="117" y="382" class="note">Blue lands at E2, above E1.</text>
+    <text x="117" y="402" class="note">Only buffers A4 and C3 change.</text>
+  </g>
+
+  <g transform="translate(805 105)">
+    <rect width="250" height="430" rx="18" fill="#ffffff" stroke="#dbe2ee"/>
+    <text x="125" y="40" class="heading">4 &#183; Undo: Trr Bll</text>
+    <text x="125" y="66" class="note">Reverse the setups in reverse order</text>
+    <g transform="translate(35 110)"><use href="#board"/>
+      <circle cx="60" cy="185" r="14" fill="#3f7edb"/>
+      <circle cx="60" cy="145" r="14" fill="#3f7edb"/>
+      <circle cx="140" cy="65" r="14" fill="#d9dee7" stroke="#8795ab" stroke-width="2"/>
+      <circle cx="20" cy="105" r="14" fill="#d9dee7" stroke="#8795ab" stroke-width="2"/>
+    </g>
+    <text x="125" y="382" class="note">Blue is solved at B2; two unsolved</text>
+    <text x="125" y="402" class="note">balls traded places at D4 and A3.</text>
+  </g>
+</svg>
