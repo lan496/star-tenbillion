@@ -11,11 +11,11 @@ Install [pixi](https://pixi.sh), then run:
 pixi install
 pixi run analyze
 pixi run test
+pixi run optimal
 ```
 
-The environment follows the same project-local GAP setup as
-[`lan496/gap-sandbox`](https://github.com/lan496/gap-sandbox). GAP and its
-version are locked in `pixi.lock`; nothing needs to be installed globally.
+GAP and its version are locked in `pixi.lock`; nothing needs to be installed
+globally.
 
 ## Move notation
 
@@ -30,6 +30,8 @@ the bottom upward, so row 1 is the bottom and the three-ball cap is row 5.
 
 Moving the core between upper- and lower-case moves is implicit. Return it to
 the normal position after a lower-case move sequence.
+
+![Unwrapped map of the 23 ball positions and the four move generators](docs/positions-and-moves.svg)
 
 ## A solution
 
@@ -109,6 +111,14 @@ color arrangements, or
 if the names of the five four-ball colors—and hence their solved columns—are
 regarded as interchangeable. The latter is about 451 times the advertised
 ten billion.
+
+## Optimal-number study
+
+The exact God's number remains unknown. Exhaustive search of an 8,580,495-state
+quotient proves that it is at least **16** in the fifth-turn metric and at least
+**15** when any nonzero disc turn counts as one move. Run `pixi run optimal` to
+reproduce the search. See [the optimal-number study](docs/optimal-number.md)
+for the metrics, proof, complete distributions, and remaining gap.
 
 ## Sources
 
