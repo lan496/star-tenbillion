@@ -132,8 +132,7 @@ with `bll`:
 1. Spot a duplicated color in row 1 and a missing color in rows 2-4.
 2. Stage a ball of the missing color: aim it inside row 3 with `T`, which
    fixes rows 1-2 and the cap, then drop it with `bl` (`A3` to `B2` or `D3`
-   to `E2`) into the column just right of a duplicate. A ball stuck in row 4
-   comes down the same way after a paired `t` setup that protects the cap.
+   to `E2`) into the column just right of a duplicate.
 3. Turn `B`. It moves rows 1 and 2 rigidly, so the staged offset cannot
    change; stop when the duplicate reaches `B1` and the staged ball `C2`.
    The mirrored `brr` works from the seats `E1` and `D2` instead when the
@@ -141,6 +140,19 @@ with `bll`:
 4. Apply `bll`: the missing color enters at `E1` and the duplicate leaves to
    `D2`. Staging churn at the `B1` and `E1` seats is harmless; only the set
    of five colors matters, because row 1 defines the targets.
+
+When row 3 has no ball of the missing color, stage from wherever it is:
+
+- From row 2 at the wrong offset: rotate `B` to carry the ball to `B2` or
+  `E2`, lift it into row 3 with `bl` (`B2` to `C3` or `E2` to `A3`), and
+  re-enter step 2.
+- From row 4: use the insertion tool `K = (A4 E2 C3)` defined below, which
+  carries `A4` straight to `E2` while fixing the cap and all of row 1.
+  First turn `B` so a duplicate sits at the pinned seat `A1`; the offset is
+  frozen once the ball lands, so this turn must come before `K`. Then aim
+  the ball to `A4` with `T`, apply `K`, and finish with `Br` (duplicate to
+  `E1`, ball to `D2`) and `brr`. A raw `t` click also drops `A4` to `B3`,
+  but it trades one cap ball and costs an extra `tll` round to repay.
 
 For example, with blue at `A1` and `C1`, no yellow in row 1, and a yellow
 ball at `C3`: `Trr` aims the yellow to `A3`, `bl` drops it to `B2`, `Bl`
