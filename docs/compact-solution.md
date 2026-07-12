@@ -58,7 +58,7 @@ two. A second exhaustive pass finds no pure 3-cycle through depth 7, so eight
 clicks is optimal too. This local result does not imply that using a shortest
 3-cycle minimizes an entire solve.
 
-## Cap and row 1 first
+## Step 1: cap and row 1
 
 The column/row names and the solved-state convention are defined in the
 [project notation](notation.md); in particular the bottom row chooses each
@@ -84,7 +84,7 @@ scramble offers.
 
 ![Four milestones of the row-by-row solve with the single algorithm](compact-solve-phases.svg)
 
-### Filling the cap
+### Step 1a: filling the cap
 
 Each `t` click trades cap balls with row 4 at fixed slots:
 
@@ -115,7 +115,7 @@ and a single `tl` inserts both at once; finish with the third ball at `E4`
 and `trr`. Ordering within the cap never matters because the three balls are
 identical.
 
-### Arranging row 1
+### Step 1b: arranging row 1
 
 Row 1 mirrors the cap one level down. Every `b` click fixes `A1`, `C1`, and
 `D1`, so row 1 trades balls only at the two seats `B1` and `E1`:
@@ -195,7 +195,7 @@ In general, if setup turns `S` carry a destination and donor to these working
 positions, perform `S K S^-1` or `S K^2 S^-1`. Since words are executed from
 left to right, undo the last setup turn first and reverse every direction.
 
-## Align row 2, one column at a time
+## Step 2: align row 2, one column at a time
 
 To fill a wrong position `X2`, where `X` is any column:
 
@@ -239,7 +239,7 @@ Repeat this insertion for `A2` through `E2`. It is usually efficient to leave
 already-correct positions alone and choose donors from columns that are still
 wrong.
 
-## Complete rows 3 and 4 column-by-column
+## Step 3: complete rows 3 and 4 column-by-column
 
 Once row 2 matches row 1, use one row-2 position as temporary storage. It may
 be wrong during this phase; the other completed row-2 positions stay fixed.
