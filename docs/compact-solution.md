@@ -71,6 +71,17 @@ are in row 1; use ordinary disc/core moves until the five colors are present,
 then choose their circular order. From this point onward, the cycles below
 leave the cap and row 1 fixed after every setup is undone.
 
+Do the cap before row 1. The generators interfere in one direction only: the
+cap exchanges balls only through `t`, which mixes the cap with row 4, while
+`T`, `B`, and `b` all fix the cap; conversely, row 1 exchanges balls only
+through `b`, which never reaches the cap. Filling the cap may haul odd-color
+balls up from the bottom rows and churn row 1 along the way, but the later
+row-1 work with `b`, `B`, and `T` cannot disturb a finished cap. If a color
+needed in row 1 is stranded in row 4, bring it down with a paired setup such
+as `tr ... tl` so the cap returns intact. This ordering is a convenience, not
+a prerequisite: cap balls are indistinguishable, so take any shortcut the
+scramble offers.
+
 ![Four milestones of the row-by-row solve with the single algorithm](compact-solve-phases.svg)
 
 ## Turn `C` into an insertion tool
