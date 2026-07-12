@@ -338,6 +338,46 @@ move group. This is the algebraic reason a single local cycle is sufficient as
 the reusable operation. It does not mean that arbitrary conjugating setup
 words are automatically short.
 
+### The stabilizer picture
+
+The move group is all of `A23`, which is highly transitive, so the pointwise
+stabilizer of any `k` positions is the full alternating group on the other
+`23 - k`: fixing any four row-1 seats leaves `A19`, fixing row 1 leaves
+`A18`, and fixing the cap and row 1 leaves `A15` on rows 2-4. Which seats
+are fixed never matters to the subgroup, only how many.
+
+What distinguishes seats is which single clicks lie inside each stabilizer:
+
+| Positions fixed pointwise | Clicks inside the stabilizer |
+|---|---|
+| row 1 | `T`, `t` |
+| cap | `T`, `B`, `b` |
+| cap and row 1 | `T` only |
+| `A1`, `C1`, `D1` | `T`, `t`, `b` |
+
+Staying inside a stabilizer at every click reaches far less than the
+stabilizer itself:
+
+- `<T, t>` is the full pointwise stabilizer of rows 1-2, the alternating
+  group on the upper 13 positions. The top half needs no conjugation tricks.
+- `<T, b>` fixes the cap and `A1 C1 D1`, but has order 63000 against the
+  stabilizer's `17!/2 = 177843714048000`. The algorithm `C` is a word in
+  `T` and `b`, so it lives inside this tiny subgroup.
+- `<T, t, b>` has order about `3.3 x 10^12` against `Stab(A1 C1 D1) =
+  20!/2`, about `1.2 x 10^18`.
+
+Most of each stabilizer is therefore reachable only by leaving it
+transiently and returning: the setup-and-undo conjugations of the method are
+structurally necessary, not a convenience. The closing check: the 25
+conjugates `S K S^-1` with `S` ranging over `<T, B>` generate the entire
+pointwise stabilizer of cap and row 1. This is the exact algebraic guarantee
+that Steps 2 and 3 can finish every position with the one insertion tool.
+Reproduce these computations with:
+
+```sh
+pixi run stabilizers
+```
+
 ## Historical construction
 
 Takashima's historical one-algorithm idea translates to

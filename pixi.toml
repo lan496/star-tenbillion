@@ -9,6 +9,7 @@ platforms = ["osx-arm64", "osx-64", "linux-64"]
 analyze = "gap -q gap/analyze.g"
 compact = "gap -q gap/compact_solution.g"
 search-compact = "gap -q gap/search_compact.g"
+stabilizers = "gap -q gap/stabilizers.g"
 test = "gap -q gap/test.g"
 repl = "gap -q"
 build-optimal = "rustc --edition=2024 -C opt-level=3 -D warnings src/optimal_number.rs -o .pixi/optimal-number"
