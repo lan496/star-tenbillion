@@ -134,7 +134,9 @@ Each `t` click trades cap balls with row 4 at fixed slots:
 
 `tll` is the cap's single-ball insertion tool: it swaps exactly one ball in
 from `B4` and one out from `C5`, while the other two cap balls only cycle
-among themselves. This gives a uniform recipe:
+among themselves. The seats `B4`, `E4`, `C5`, and `E5` in the table are
+fixed by the `t` cycles and are never a choice; the only free choice is
+which odd-color ball to stage next. This gives a uniform recipe:
 
 1. Stage an odd-color ball into row 4, lifting it with `b` clicks and a `t`
    click as needed; nothing is final yet, so free churn is fine.
@@ -166,38 +168,84 @@ Row 1 mirrors the cap one level down. Every `b` click fixes `A1`, `C1`, and
 
 ![The rows 1-2 trades of bl, bll, and brr](compact-row1-trades.svg)
 
-While a color appears twice in row 1, trade one copy for a missing color
-with `bll`:
+One `bll` trade swaps the ball at `B1` out of row 1 and the ball at `C2`
+into row 1. `B` turns rows 1 and 2 together, so the spacing between a row-2
+ball and a row-1 ball can never change once both are in place. Every case
+below therefore first creates the right spacing -- a duplicate parked on a
+pinned seat, the missing ball landing beside it -- and only then rotates the
+pair into the working seats.
 
-1. Spot a duplicated color in row 1 and a missing color in rows 2-4.
-2. Stage a ball of the missing color: aim it inside row 3 with `T`, which
-   fixes rows 1-2 and the cap, then drop it with `bl` (`A3` to `B2` or `D3`
-   to `E2`) into the column just right of a duplicate.
-3. Turn `B`. It moves rows 1 and 2 rigidly, so the staged offset cannot
-   change; stop when the duplicate reaches `B1` and the staged ball `C2`.
-   The mirrored `brr` works from the seats `E1` and `D2` instead when the
-   drop lands just left of a duplicate.
-4. Apply `bll`: the missing color enters at `E1` and the duplicate leaves to
-   `D2`. Staging churn at the `B1` and `E1` seats is harmless; only the set
-   of five colors matters, because row 1 defines the targets.
+How to read the position letters in the cases below: almost every named
+position is a fixed working seat of a move, never a free choice. `B1` and
+`E1` with their row-2 partners `A2`, `C2`, `D2` are forced by the `b` cycles
+in the table; `A3` and `D3` are the only seats `bl` drops from; `A4`, `E2`,
+and `C3` are forced by `K`. The only free choices in a round are which
+duplicated ball to evict, which ball of the missing color to fetch, and --
+where a mirrored route exists -- which side to take. Each case fixes one
+side for definiteness; the mirror (swap `A1 A3 B2 bll` for `D1 D3 E2 brr`)
+works symmetrically.
 
-When row 3 has no ball of the missing color, stage from wherever it is:
+Repeat the following round while a color appears twice in row 1: spot a
+duplicated color in row 1 and a missing color in rows 2-4, then follow the
+case for the row that holds the missing ball.
 
-- From row 2 at the wrong offset: rotate `B` to carry the ball to `B2` or
-  `E2`, lift it into row 3 with `bl` (`B2` to `C3` or `E2` to `A3`), and
-  continue from item 2 of the recipe.
-- From row 4: use the insertion tool `K = (A4 E2 C3)` defined above, which
-  carries `A4` straight to `E2` while fixing the cap and all of row 1.
-  First turn `B` so a duplicate sits at the pinned seat `A1`; the offset is
-  frozen once the ball lands, so this turn must come before `K`. Then aim
-  the ball to `A4` with `T`, apply `K`, and finish with `Br` (duplicate to
-  `E1`, ball to `D2`) and `brr`. A raw `t` click also drops `A4` to `B3`,
-  but it trades one cap ball and costs an extra `tll` round to repay.
+#### Case: the missing ball is in row 3
 
-For example, with blue at `A1` and `C1`, no yellow in row 1, and a yellow
-ball at `C3`: `Trr` aims the yellow to `A3`, `bl` drops it to `B2`, `Bl`
-carries the blue to `B1` and the yellow to `C2`, and `bll` finishes with
-yellow at `E1` and the spare blue parked at `D2`.
+1. Turn `B` until a duplicate sits at `A1`. That seat is pinned, so the
+   duplicate survives the staging click.
+2. Aim the missing ball to `A3` with `T`, which fixes rows 1-2 and the cap.
+3. Drop with `bl`: the ball lands at `B2`, just right of the duplicate.
+4. Turn `Bl`: the duplicate rides `A1` to `B1`, the ball `B2` to `C2`.
+5. Apply `bll`: the missing color enters at `E1`, the duplicate leaves to
+   `D2`.
+
+#### Case: the missing ball is already in row 2
+
+- Just right of a duplicate (duplicate at `X1`, ball at `(X+1)2`)? Turn `B`
+  until the pair reaches `B1` and `C2`, then `bll`.
+- Just left of a duplicate? Turn `B` until the pair reaches `E1` and `D2`,
+  then `brr`.
+- Any other offset: turn `B` until the ball is at `B2` or `E2`, lift it into
+  row 3 with `bl` (`B2` to `C3`, `E2` to `A3`), and use the row-3 case.
+
+#### Case: the missing ball is in row 4
+
+1. Turn `B` until a duplicate sits at `A1` -- before anything lands, because
+   the spacing freezes at landing.
+2. Aim the ball to `A4` with `T`.
+3. Apply `K` from the insertion-tool section: it carries `A4` straight to
+   `E2` while fixing the cap and all of row 1.
+4. Turn `Br`: the duplicate rides `A1` to `E1`, the ball `E2` to `D2`.
+5. Apply `brr`.
+
+Here `A1` pairs with `brr` -- not the usual `bll` -- because `K` always
+lands the ball at `E2`, one seat left of `A1`. The mirror parks the
+duplicate at `D1` instead and finishes with `Brr` and `bll`. A raw `t` click
+also drops `A4` to `B3`, but it trades one cap ball and costs an extra `tll`
+round to repay.
+
+#### About the churn
+
+Every `b` click trades the seats `B1` and `E1` with `A2` and `D2`. The
+duplicate parked at `A1` is safe, but whatever else sits at `B1` or `E1`
+during a staging click swaps with row-2 balls. That is acceptable: a needed
+color swept out lands at `C2` or `A2` and becomes the staged ball of a later
+round. Only the set of five colors matters, because row 1 defines the
+targets.
+
+When row 1 is nearly complete and every seat holds a needed ball, stage
+without `b` clicks instead: aim the missing ball to `A4` or `C3` and use `K`
+or `K K`, which fix rows 1 and 2 outside `E2`, then finish with the `B` turn
+and the final trade as above. This costs more clicks but never disturbs the
+finished seats.
+
+#### Worked trade
+
+With blue at `A1` and `C1`, no yellow in row 1, and a yellow ball at `C3`,
+the row-3 case applies with the duplicate already at `A1`: `Trr` aims the
+yellow to `A3`, `bl` drops it to `B2`, `Bl` carries the blue to `B1` and the
+yellow to `C2`, and `bll` finishes with yellow at `E1` and the spare blue
+parked at `D2`.
 
 ![One row-1 trade: spot, stage, aim, insert with bll](compact-row1-arranging.svg)
 
