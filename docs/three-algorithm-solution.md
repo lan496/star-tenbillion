@@ -9,7 +9,7 @@ algorithms do almost all of the work:
 | top 5-cycle | `tr Tl` 7 times | Cycles the five balls in the upper part of the working columns by two places |
 | bottom 5-cycle | `br Bl` 7 times | Cycles the five balls in the lower part of the working columns by two places |
 
-![Directed cycles for the three reusable solution algorithms](solution-algorithms.svg)
+![Directed cycles for the three reusable solution algorithms](assets/solution-algorithms.svg)
 
 Their inverses run the same cycles backwards. These give the following
 systematic solve.
@@ -31,7 +31,7 @@ systematic solve.
    bottom two rows. Use the top 5-cycle to put the remaining odd-colored ball
    at `B3`, then use the 9-cycle to finish both columns.
 
-![Four schematic milestones in the column-by-column solution](solution-phases.svg)
+![Four schematic milestones in the column-by-column solution](assets/solution-phases.svg)
 
 The algorithms and this column-by-column procedure are the solution published
 by Pedro Luis and documented by Jaap Scherphuis. The GAP model checks the

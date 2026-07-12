@@ -13,14 +13,14 @@ the top disc with the core down. Two letters, such as `Tll`, mean two turns.
 Moving the core between upper- and lower-case moves is implicit. Return it to
 the normal position after a lower-case move sequence.
 
-![The eight one-click moves matching the pattern TBtb followed by l or r](move-notation-grid.svg)
+![The eight one-click moves matching the pattern TBtb followed by l or r](assets/move-notation-grid.svg)
 
 The next figure traces every ball through one click of each move. `T` and `B`
 rotate their two rows rigidly, while the core-down moves `t` and `b` zigzag
 between three rows; a right turn reverses every arrow. The numbered cycles
 under each board use the position numbers of the next section.
 
-![How each one-click move permutes the balls](move-ball-cycles.svg)
+![How each one-click move permutes the balls](assets/move-ball-cycles.svg)
 
 ## Positions
 
@@ -41,7 +41,7 @@ row 1    A1    B1    C1    D1    E1       bottom row
 The GAP model and the search programs refer to the same 23 positions by the
 numbers 1 through 23 shown in the unwrapped map below.
 
-![Unwrapped map of the 23 ball positions and the four move generators](positions-and-moves.svg)
+![Unwrapped map of the 23 ball positions and the four move generators](assets/positions-and-moves.svg)
 
 ## Solved states
 

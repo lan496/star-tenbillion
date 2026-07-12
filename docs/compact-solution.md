@@ -9,7 +9,7 @@ This page first defines the algorithm and its insertion tool, then walks the
 row-by-row solve in three steps, and closes with the group-theoretic and
 historical background.
 
-![Four milestones of the row-by-row solve with the single algorithm](compact-solve-phases.svg)
+![Four milestones of the row-by-row solve with the single algorithm](assets/compact-solve-phases.svg)
 
 ## One algorithm
 
@@ -31,7 +31,7 @@ top-bottom-top,    left  1-2-1
 bottom-top-bottom, right 1-2-1
 ```
 
-![The mirrored six-move algorithm and its three-cycle](compact-solution.svg)
+![The mirrored six-move algorithm and its three-cycle](assets/compact-solution.svg)
 
 Only the normal-core top disc (`T`) and lowered-core bottom disc (`b`) occur.
 GAP calculates
@@ -92,7 +92,7 @@ algorithm to memorize. One application of `K` moves the contents as follows:
 `K` therefore inserts a ball from `A4` into `E2`. Applying `K` twice inserts
 a ball from `C3` into `E2`. All other positions are fixed.
 
-![The insertion tool K cycles the donor A4, the destination E2, and the buffer C3](compact-insertion-tool.svg)
+![The insertion tool K cycles the donor A4, the destination E2, and the buffer C3](assets/compact-insertion-tool.svg)
 
 In general, if setup turns `S` carry a destination and donor to these working
 positions, perform `S K S^-1` or `S K^2 S^-1`. Since words are executed from
@@ -148,7 +148,7 @@ which odd-color ball to stage next. This gives a uniform recipe:
    wrong ball always reaches the `C5` ejection seat in time, and three
    insertions fill the cap exactly.
 
-![The cap filled step by step: stage, aim, insert with tll, repeat](compact-cap-filling.svg)
+![The cap filled step by step: stage, aim, insert with tll, repeat](assets/compact-cap-filling.svg)
 
 When two odd-color balls are already in row 4, rotate them to `B4` and `E4`
 and a single `tl` inserts both at once; finish with the third ball at `E4`
@@ -166,7 +166,7 @@ Row 1 mirrors the cap one level down. Every `b` click fixes `A1`, `C1`, and
 | `bll` | `C2` to `E1` only | `B1` to `D2` only |
 | `brr` | `D2` to `B1` only | `E1` to `C2` only |
 
-![The rows 1-2 trades of bl, bll, and brr](compact-row1-trades.svg)
+![The rows 1-2 trades of bl, bll, and brr](assets/compact-row1-trades.svg)
 
 One `bll` trade swaps the ball at `B1` out of row 1 and the ball at `C2`
 into row 1. `B` turns rows 1 and 2 together, so the spacing between a row-2
@@ -222,7 +222,7 @@ ball at `C3`, the duplicate is already parked: `Trr` aims the yellow to
 `C2`, and `bll` finishes with yellow at `E1` and the spare blue parked at
 `D2`.
 
-![One row-1 trade: spot, stage, aim, insert with bll](compact-row1-arranging.svg)
+![One row-1 trade: spot, stage, aim, insert with bll](assets/compact-row1-arranging.svg)
 
 #### Direct route: the missing ball is already in row 2
 
@@ -244,7 +244,7 @@ Brr     z   d*  w   x   y     m to C2; rows 1-2 rotate together
 bll     z   y   w   x   m     m in at E1; d* out to D2
 ```
 
-![The three row-2 offsets and the route each one takes](compact-row1-case-row2.svg)
+![The three row-2 offsets and the route each one takes](assets/compact-row1-case-row2.svg)
 
 #### K route: the missing ball is in row 4
 
@@ -273,7 +273,7 @@ duplicate at `D1` instead and finishes with `Brr` and `bll`. A raw `t` click
 also drops `A4` to `B3`, but it trades one cap ball and costs an extra `tll`
 round to repay.
 
-![The row-4 case: normalize, aim, insert with K, trade](compact-row1-case-row4.svg)
+![The row-4 case: normalize, aim, insert with K, trade](assets/compact-row1-case-row4.svg)
 
 #### About the churn
 
@@ -340,7 +340,7 @@ Brr Tll K Trr Bll
 and finishes at the original orientation with blue at `B2`. Only the two
 unsolved buffer balls that shared the 3-cycle moved elsewhere.
 
-![The worked insertion Brr Tll K Trr Bll in four states](compact-worked-insertion.svg)
+![The worked insertion Brr Tll K Trr Bll in four states](assets/compact-worked-insertion.svg)
 
 Repeat this insertion for `A2` through `E2`. It is usually efficient to leave
 already-correct positions alone and choose donors from columns that are still
