@@ -9,6 +9,8 @@ This page first defines the algorithm and its insertion tool, then walks the
 row-by-row solve in three steps, and closes with the group-theoretic and
 historical background.
 
+![Four milestones of the row-by-row solve with the single algorithm](compact-solve-phases.svg)
+
 ## One algorithm
 
 Moves and positions follow the [project notation](notation.md); recall that
@@ -119,8 +121,6 @@ needed in row 1 is stranded in row 4, bring it down with a paired setup such
 as `tr ... tl` so the cap returns intact. This ordering is a convenience, not
 a prerequisite: cap balls are indistinguishable, so take any shortcut the
 scramble offers.
-
-![Four milestones of the row-by-row solve with the single algorithm](compact-solve-phases.svg)
 
 ### Step 1a: filling the cap
 
