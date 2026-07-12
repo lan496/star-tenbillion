@@ -319,23 +319,34 @@ rounds.
 
 ## Step 2: align row 2, one column at a time
 
+Everything from here to the end of the solve is one shape of operation, the
+conjugated insertion `S K S^-1` or `S K K S^-1`: setup turns `S` carry a
+destination and a donor to the fixed working seats, `K` fires, and the
+setup unwinds in reverse order. As in Step 1b, the seats are forced by `K`
+and never a choice -- `E2` receives, `A4` donates under one `K`, `C3`
+donates under `K K`. The free choices are which column to fill next and
+which donor ball to fetch.
+
 To fill a wrong position `X2`, where `X` is any column:
 
 1. Read the required color from the anchor directly below it at `X1`.
-2. Rotate the lower disc so that the destination `X2` is carried to the work
-   position `E2`. Record this lower setup turn.
-3. Find a ball of the required color in row 4 or row 3. Rotate the upper disc
-   to carry a row-4 ball to `A4`, or a row-3 ball to `C3`. Record this upper
+2. Rotate the lower disc until the destination `X2` reaches `E2`. Record
+   this lower setup turn.
+3. Rotate the upper disc to carry a donor of the required color to its
+   seat: a row-4 donor to `A4`, or a row-3 donor to `C3`. Record this upper
    setup turn.
-4. Use `K` once for a ball at `A4`, or twice for a ball at `C3`.
-5. Undo the upper setup, then undo the lower setup. The required ball is now at
-   the original destination `X2`; previously completed row-2 positions have
-   not moved.
+4. Apply `K` once for a donor at `A4`, or twice for a donor at `C3`.
+5. Undo the upper setup, then undo the lower setup. The required ball is now
+   at the original destination `X2`; previously completed row-2 positions
+   have not moved.
+
+### No donor above row 2
 
 If every available ball of the required color is already in row 2, first use
-the cycle as a lift: carry one of those balls to `E2`, apply `K` once to move it
-to `C3`, and undo the lower setup. Rows 3 and 4 are still unsolved, so their two
-affected positions are safe buffers.
+the cycle as a lift: carry one of those balls to `E2`, apply `K` once to move
+it to `C3`, and undo the lower setup. Rows 3 and 4 are still unsolved, so
+their two affected positions are safe buffers. The lifted ball is now a
+row-3 donor for the normal insertion above.
 
 ### Worked insertion
 
@@ -363,22 +374,38 @@ wrong.
 
 ## Step 3: complete rows 3 and 4 column-by-column
 
-Once row 2 matches row 1, use one row-2 position as temporary storage. It may
-be wrong during this phase; the other completed row-2 positions stay fixed.
+Once row 2 matches row 1, use one row-2 position as temporary storage: the
+buffer. It may be wrong during this phase; the other completed row-2
+positions stay fixed. The phase alternates two operations -- load the
+buffer, place the buffered ball -- and chains them until the upper rows are
+done.
 
-1. Load the next required upper-row ball into the chosen row-2 buffer. To move
-   a ball down, rotate it to `A4` and apply `K`, or rotate it to `C3` and apply
-   `K` twice. Conjugate with lower-disc turns when the buffer is not `E2`.
-2. To fill a row-4 destination, rotate that destination to `A4`, carry the
-   buffered ball to `E2`, apply `K` twice, and undo both rotations. The buffer
-   now contains the ball displaced from the other working position.
-3. To fill a row-3 destination, rotate it to `C3`, carry the buffered ball to
-   `E2`, apply `K` once, and undo both rotations.
-4. Look at the color now in the buffer and take it to the row-3 or row-4 slot
-   above the matching row-1 anchor. Continue following displaced colors. This
-   is exactly following a cycle in a permutation: eventually the chain closes
-   and the correct color returns to the row-2 buffer.
-5. Start another chain if any upper position is still in the wrong column.
+### Load the buffer
+
+Take the next required upper-row ball down into the buffer: rotate it to
+`A4` and apply `K`, or rotate it to `C3` and apply `K` twice. Conjugate
+with lower-disc turns when the buffer is not at `E2`.
+
+### Place the buffered ball
+
+- Row-4 destination: rotate it to `A4`, carry the buffer to `E2`, apply `K`
+  twice, and undo both rotations. The three seats cycle: the required ball
+  lands on the destination, the wrong ball from the destination moves to
+  `C3`, and the buffer receives the old `C3` ball.
+- Row-3 destination: rotate it to `C3`, carry the buffer to `E2`, apply `K`
+  once, and undo both rotations. Here the wrong ball moves to `A4` and the
+  buffer receives the old `A4` ball.
+
+### Follow the chain
+
+Look at the color now in the buffer and place it, with the same operation,
+in the row-3 or row-4 slot above the matching row-1 anchor. Continue
+following displaced colors. This is exactly following a cycle of a
+permutation: eventually the chain closes and a correct color returns to the
+buffer. Start another chain if any upper position is still in the wrong
+column.
+
+### Parity ending
 
 When only two colors appear wrong, do not try to swap just two balls: every
 legal move is even. Include the row-2 buffer as the third position and use `K`
