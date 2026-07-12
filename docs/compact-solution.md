@@ -199,6 +199,21 @@ case for the row that holds the missing ball.
 5. Apply `bll`: the missing color enters at `E1`, the duplicate leaves to
    `D2`.
 
+Row 1 changes as follows. Write `d` for the duplicated color (`d*` the copy
+being traded out), `m` for the missing color, `x y z` for the other three
+row-1 balls, and `p s` for the row-2 balls that start at `A2` and `D2`:
+
+```text
+        A1  B1  C1  D1  E1
+start   d*  x   d   y   z     m in row 3
+Trr     d*  x   d   y   z     m to A3; row 1 untouched
+bl      d*  p   d   y   s     m to B2; x out to C2, z out to A2
+Bl      s   d*  p   d   y     m to C2; rows 1-2 rotate together
+bll     s   y   p   d   m     m in at E1; d* out to D2
+```
+
+After the round, `x` sits at `A2` and `z` at `D3`, ready for later rounds.
+
 For example, with blue at `A1` and `C1`, no yellow in row 1, and a yellow
 ball at `C3`, the duplicate is already parked: `Trr` aims the yellow to
 `A3`, `bl` drops it to `B2`, `Bl` carries the blue to `B1` and the yellow to
@@ -216,6 +231,17 @@ ball at `C3`, the duplicate is already parked: `Trr` aims the yellow to
 - Any other offset: turn `B` until the ball is at `B2` or `E2`, lift it into
   row 3 with `bl` (`B2` to `C3`, `E2` to `A3`), and use the row-3 case.
 
+Row 1 changes as follows on the just-right route (duplicate `d*` at `D1`,
+missing `m` at `E2`); the just-left route mirrors it. There is no `bl` drop,
+so no unknown ball enters row 1 -- every seat stays known:
+
+```text
+        A1  B1  C1  D1  E1
+start   x   y   z   d*  w     m at E2
+Brr     z   d*  w   x   y     m to C2; rows 1-2 rotate together
+bll     z   y   w   x   m     m in at E1; d* out to D2
+```
+
 ![The three row-2 offsets and the route each one takes](compact-row1-case-row2.svg)
 
 #### Case: the missing ball is in row 4
@@ -227,6 +253,17 @@ ball at `C3`, the duplicate is already parked: `Trr` aims the yellow to
    `E2` while fixing the cap and all of row 1.
 4. Turn `Br`: the duplicate rides `A1` to `E1`, the ball `E2` to `D2`.
 5. Apply `brr`.
+
+Row 1 changes as follows; `K` never touches it, so as in the row-2 case
+every seat stays known:
+
+```text
+        A1  B1  C1  D1  E1
+start   d*  x   d   y   z     m in row 4, then aimed to A4
+K       d*  x   d   y   z     m to E2; row 1 untouched
+Br      x   d   y   z   d*    m to D2; rows 1-2 rotate together
+brr     x   m   y   z   d     m in at B1; d* out to C2
+```
 
 Here `A1` pairs with `brr` -- not the usual `bll` -- because `K` always
 lands the ball at `E2`, one seat left of `A1`. The mirror parks the
