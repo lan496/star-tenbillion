@@ -82,6 +82,8 @@ as `tr ... tl` so the cap returns intact. This ordering is a convenience, not
 a prerequisite: cap balls are indistinguishable, so take any shortcut the
 scramble offers.
 
+![Four milestones of the row-by-row solve with the single algorithm](compact-solve-phases.svg)
+
 ### Filling the cap
 
 Each `t` click trades cap balls with row 4 at fixed slots:
@@ -106,12 +108,46 @@ among themselves. This gives a uniform recipe:
    wrong ball always reaches the `C5` ejection seat in time, and three
    insertions fill the cap exactly.
 
+![The cap filled step by step: stage, aim, insert with tll, repeat](compact-cap-filling.svg)
+
 When two odd-color balls are already in row 4, rotate them to `B4` and `E4`
 and a single `tl` inserts both at once; finish with the third ball at `E4`
 and `trr`. Ordering within the cap never matters because the three balls are
 identical.
 
-![Four milestones of the row-by-row solve with the single algorithm](compact-solve-phases.svg)
+### Arranging row 1
+
+Row 1 mirrors the cap one level down. Every `b` click fixes `A1`, `C1`, and
+`D1`, so row 1 trades balls only at the two seats `B1` and `E1`:
+
+| Move | Inserts into row 1 | Ejects from row 1 |
+|---|---|---|
+| `bl` | `A2` to `B1` and `D2` to `E1` | `B1` to `C2` and `E1` to `A2` |
+| `bll` | `C2` to `E1` only | `B1` to `D2` only |
+| `brr` | `D2` to `B1` only | `E1` to `C2` only |
+
+While a color appears twice in row 1, trade one copy for a missing color
+with `bll`:
+
+1. Spot a duplicated color in row 1 and a missing color in rows 2-4.
+2. Stage a ball of the missing color: aim it inside row 3 with `T`, which
+   fixes rows 1-2 and the cap, then drop it with `bl` (`A3` to `B2` or `D3`
+   to `E2`) into the column just right of a duplicate. A ball stuck in row 4
+   comes down the same way after a paired `t` setup that protects the cap.
+3. Turn `B`. It moves rows 1 and 2 rigidly, so the staged offset cannot
+   change; stop when the duplicate reaches `B1` and the staged ball `C2`.
+   The mirrored `brr` works from the seats `E1` and `D2` instead when the
+   drop lands just left of a duplicate.
+4. Apply `bll`: the missing color enters at `E1` and the duplicate leaves to
+   `D2`. Staging churn at the `B1` and `E1` seats is harmless; only the set
+   of five colors matters, because row 1 defines the targets.
+
+For example, with blue at `A1` and `C1`, no yellow in row 1, and a yellow
+ball at `C3`: `Trr` aims the yellow to `A3`, `bl` drops it to `B2`, `Bl`
+carries the blue to `B1` and the yellow to `C2`, and `bll` finishes with
+yellow at `E1` and the spare blue parked at `D2`.
+
+![One row-1 trade: spot, stage, aim, insert with bll](compact-row1-arranging.svg)
 
 ## Turn `C` into an insertion tool
 

@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="620" viewBox="0 0 1080 620" role="img" aria-labelledby="title desc">
+  <title id="title">Arranging row 1 step by step</title>
+  <desc id="desc">Four schematic states of one row-1 trade: spot a duplicate and a missing color, stage the missing ball into row 2, aim both with a lower disc turn, and insert with bll.</desc>
+  <defs>
+    <style>
+      .title { font: 700 28px system-ui, sans-serif; fill: #172033; }
+      .heading { font: 700 18px system-ui, sans-serif; fill: #172033; text-anchor: middle; }
+      .note { font: 14px system-ui, sans-serif; fill: #58657d; text-anchor: middle; }
+      .column { font: 700 13px system-ui, sans-serif; fill: #58657d; text-anchor: middle; }
+      .arrow { stroke: #8795ab; stroke-width: 4; fill: none; marker-end: url(#arrow); }
+      .move { stroke: #dc7a24; stroke-width: 3; fill: none; marker-end: url(#movearrow); }
+    </style>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#8795ab"/></marker>
+    <marker id="movearrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#dc7a24"/></marker>
+    <g id="board">
+      <g fill="#f0f3f8" stroke="#a9b4c7" stroke-width="2">
+        <circle cx="20" cy="20" r="14"/><circle cx="100" cy="20" r="14"/><circle cx="180" cy="20" r="14"/>
+        <circle cx="20" cy="65" r="14"/><circle cx="60" cy="65" r="14"/><circle cx="100" cy="65" r="14"/><circle cx="140" cy="65" r="14"/><circle cx="180" cy="65" r="14"/>
+        <circle cx="20" cy="105" r="14"/><circle cx="60" cy="105" r="14"/><circle cx="100" cy="105" r="14"/><circle cx="140" cy="105" r="14"/><circle cx="180" cy="105" r="14"/>
+        <circle cx="20" cy="145" r="14"/><circle cx="60" cy="145" r="14"/><circle cx="100" cy="145" r="14"/><circle cx="140" cy="145" r="14"/><circle cx="180" cy="145" r="14"/>
+        <circle cx="20" cy="185" r="14"/><circle cx="60" cy="185" r="14"/><circle cx="100" cy="185" r="14"/><circle cx="140" cy="185" r="14"/><circle cx="180" cy="185" r="14"/>
+      </g>
+      <g class="column"><text x="20" y="225">A</text><text x="60" y="225">B</text><text x="100" y="225">C</text><text x="140" y="225">D</text><text x="180" y="225">E</text></g>
+    </g>
+    <g id="cap-done">
+      <circle cx="20" cy="20" r="14" fill="#263246"/><circle cx="100" cy="20" r="14" fill="#263246"/><circle cx="180" cy="20" r="14" fill="#263246"/>
+    </g>
+  </defs>
+
+  <rect width="1080" height="620" rx="24" fill="#f7f9fc"/>
+  <text x="42" y="48" class="title">Arranging row 1: one bll trade</text>
+  <text x="42" y="76" class="note" style="text-anchor:start">Blue is duplicated in row 1 and yellow is missing; the dashed ring marks the copy to trade out; the cap is already done.</text>
+
+  <g class="arrow"><path d="M260 318 L292 318"/><path d="M520 318 L552 318"/><path d="M780 318 L812 318"/></g>
+
+  <g transform="translate(25 105)">
+    <rect width="235" height="430" rx="18" fill="#ffffff" stroke="#dbe2ee"/>
+    <text x="117" y="40" class="heading">1 &#183; Spot the trade</text>
+    <text x="117" y="66" class="note">A duplicate and a missing color</text>
+    <g transform="translate(27 110)"><use href="#board"/><use href="#cap-done"/>
+      <circle cx="20" cy="185" r="14" fill="#3f7edb"/>
+      <circle cx="100" cy="185" r="14" fill="#3f7edb"/>
+      <circle cx="20" cy="185" r="17" fill="none" stroke="#dc7a24" stroke-width="3" stroke-dasharray="5 4"/>
+      <circle cx="100" cy="105" r="14" fill="#e9c46a"/>
+    </g>
+    <text x="117" y="382" class="note">Blue appears at A1 and C1; yellow is</text>
+    <text x="117" y="402" class="note">absent from row 1 but sits at C3.</text>
+  </g>
+
+  <g transform="translate(285 105)">
+    <rect width="235" height="430" rx="18" fill="#ffffff" stroke="#dbe2ee"/>
+    <text x="117" y="40" class="heading">2 &#183; Stage: Trr bl</text>
+    <text x="117" y="66" class="note">Aim in row 3, drop to row 2</text>
+    <g transform="translate(27 110)"><use href="#board"/><use href="#cap-done"/>
+      <circle cx="20" cy="185" r="14" fill="#3f7edb"/>
+      <circle cx="100" cy="185" r="14" fill="#3f7edb"/>
+      <circle cx="20" cy="185" r="17" fill="none" stroke="#dc7a24" stroke-width="3" stroke-dasharray="5 4"/>
+      <circle cx="60" cy="145" r="14" fill="#e9c46a"/>
+      <path class="move" d="M86 96 C 66 85, 42 85, 29 96"/>
+      <path class="move" d="M25 120 C 30 132, 38 138, 46 141"/>
+    </g>
+    <text x="117" y="382" class="note">T fixes rows 1-2 and the cap; bl</text>
+    <text x="117" y="402" class="note">lands the yellow beside the ringed blue.</text>
+  </g>
+
+  <g transform="translate(545 105)">
+    <rect width="235" height="430" rx="18" fill="#ffffff" stroke="#dbe2ee"/>
+    <text x="117" y="40" class="heading">3 &#183; Aim: Bl</text>
+    <text x="117" y="66" class="note">Rows 1 and 2 turn together</text>
+    <g transform="translate(27 110)"><use href="#board"/><use href="#cap-done"/>
+      <circle cx="60" cy="185" r="14" fill="#3f7edb"/>
+      <circle cx="140" cy="185" r="14" fill="#3f7edb"/>
+      <circle cx="60" cy="185" r="17" fill="none" stroke="#dc7a24" stroke-width="3" stroke-dasharray="5 4"/>
+      <circle cx="100" cy="145" r="14" fill="#e9c46a"/>
+      <path class="move" d="M27 207 C 34 214, 46 214, 53 207"/>
+      <path class="move" d="M66 163 C 73 171, 87 171, 94 163"/>
+    </g>
+    <text x="117" y="382" class="note">The staged offset cannot change;</text>
+    <text x="117" y="402" class="note">stop at blue B1, yellow C2.</text>
+  </g>
+
+  <g transform="translate(805 105)">
+    <rect width="250" height="430" rx="18" fill="#ffffff" stroke="#dbe2ee"/>
+    <text x="125" y="40" class="heading">4 &#183; Insert: bll</text>
+    <text x="125" y="66" class="note">One ball in, one ball out</text>
+    <g transform="translate(35 110)"><use href="#board"/><use href="#cap-done"/>
+      <circle cx="140" cy="185" r="14" fill="#3f7edb"/>
+      <circle cx="180" cy="185" r="14" fill="#e9c46a"/>
+      <circle cx="140" cy="145" r="14" fill="#3f7edb"/>
+      <path class="move" d="M112 153 C 135 165, 152 172, 164 178"/>
+      <path class="move" d="M70 175 C 90 158, 108 150, 122 147"/>
+    </g>
+    <text x="125" y="382" class="note">Yellow enters at E1, the spare blue</text>
+    <text x="125" y="402" class="note">parks at D2: five colors in row 1.</text>
+  </g>
+</svg>
