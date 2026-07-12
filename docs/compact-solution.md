@@ -199,6 +199,14 @@ case for the row that holds the missing ball.
 5. Apply `bll`: the missing color enters at `E1`, the duplicate leaves to
    `D2`.
 
+For example, with blue at `A1` and `C1`, no yellow in row 1, and a yellow
+ball at `C3`, the duplicate is already parked: `Trr` aims the yellow to
+`A3`, `bl` drops it to `B2`, `Bl` carries the blue to `B1` and the yellow to
+`C2`, and `bll` finishes with yellow at `E1` and the spare blue parked at
+`D2`.
+
+![One row-1 trade: spot, stage, aim, insert with bll](compact-row1-arranging.svg)
+
 #### Case: the missing ball is already in row 2
 
 - Just right of a duplicate (duplicate at `X1`, ball at `(X+1)2`)? Turn `B`
@@ -207,6 +215,8 @@ case for the row that holds the missing ball.
   then `brr`.
 - Any other offset: turn `B` until the ball is at `B2` or `E2`, lift it into
   row 3 with `bl` (`B2` to `C3`, `E2` to `A3`), and use the row-3 case.
+
+![The three row-2 offsets and the route each one takes](compact-row1-case-row2.svg)
 
 #### Case: the missing ball is in row 4
 
@@ -224,6 +234,8 @@ duplicate at `D1` instead and finishes with `Brr` and `bll`. A raw `t` click
 also drops `A4` to `B3`, but it trades one cap ball and costs an extra `tll`
 round to repay.
 
+![The row-4 case: normalize, aim, insert with K, trade](compact-row1-case-row4.svg)
+
 #### About the churn
 
 Every `b` click trades the seats `B1` and `E1` with `A2` and `D2`. The
@@ -238,16 +250,6 @@ without `b` clicks instead: aim the missing ball to `A4` or `C3` and use `K`
 or `K K`, which fix rows 1 and 2 outside `E2`, then finish with the `B` turn
 and the final trade as above. This costs more clicks but never disturbs the
 finished seats.
-
-#### Worked trade
-
-With blue at `A1` and `C1`, no yellow in row 1, and a yellow ball at `C3`,
-the row-3 case applies with the duplicate already at `A1`: `Trr` aims the
-yellow to `A3`, `bl` drops it to `B2`, `Bl` carries the blue to `B1` and the
-yellow to `C2`, and `bll` finishes with yellow at `E1` and the spare blue
-parked at `D2`.
-
-![One row-1 trade: spot, stage, aim, insert with bll](compact-row1-arranging.svg)
 
 ## Step 2: align row 2, one column at a time
 
