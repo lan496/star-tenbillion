@@ -15,6 +15,13 @@ the normal position after a lower-case move sequence.
 
 ![The eight one-click moves matching the pattern TBtb followed by l or r](move-notation-grid.svg)
 
+The next figure traces every ball through one click of each move. `T` and `B`
+rotate their two rows rigidly, while the core-down moves `t` and `b` zigzag
+between three rows; a right turn reverses every arrow. The numbered cycles
+under each board use the position numbers of the next section.
+
+![How each one-click move permutes the balls](move-ball-cycles.svg)
+
 ## Positions
 
 Hold the puzzle with the core up. Looking down from above, name the columns
