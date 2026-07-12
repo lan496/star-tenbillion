@@ -5,6 +5,10 @@ algorithms. A method attributed to
 Naoaki Takashima showed that one three-cycle is enough. An exhaustive GAP
 search finds a shorter three-cycle with a simple mirrored pattern.
 
+This page first defines the algorithm and its insertion tool, then walks the
+row-by-row solve in three steps, and closes with the group-theoretic and
+historical background.
+
 ## One algorithm
 
 Moves and positions follow the [project notation](notation.md); recall that
@@ -45,7 +49,7 @@ pixi run search-compact
 pixi run test
 ```
 
-## Compactness result
+### Compactness result
 
 The search treats any nonzero turn of one disc in one core position as one
 face-turn-metric (FTM) move. Thus `l`, `ll`, `rr`, and `r` each cost one move.
@@ -57,6 +61,40 @@ In the fifth-turn metric, `C` costs eight clicks because each double turn costs
 two. A second exhaustive pass finds no pure 3-cycle through depth 7, so eight
 clicks is optimal too. This local result does not imply that using a shortest
 3-cycle minimizes an entire solve.
+
+## Turn `C` into an insertion tool
+
+The numbered cycle `(11,13,18)` is
+
+```text
+C = (C3 E3 E2).
+```
+
+For column building, use its conjugate
+
+```text
+K = tr C tl
+  = tr (Tl bll Tl br Trr br) tl
+  = (A4 E2 C3).
+```
+
+The initial `tr` and final `tl` are setup and undo moves, not a second
+algorithm to memorize. One application of `K` moves the contents as follows:
+
+| From | To |
+|---|---|
+| `A4` | `E2` |
+| `E2` | `C3` |
+| `C3` | `A4` |
+
+`K` therefore inserts a ball from `A4` into `E2`. Applying `K` twice inserts
+a ball from `C3` into `E2`. All other positions are fixed.
+
+![The insertion tool K cycles the donor A4, the destination E2, and the buffer C3](compact-insertion-tool.svg)
+
+In general, if setup turns `S` carry a destination and donor to these working
+positions, perform `S K S^-1` or `S K^2 S^-1`. Since words are executed from
+left to right, undo the last setup turn first and reverse every direction.
 
 ## Step 1: cap and row 1
 
@@ -145,8 +183,8 @@ When row 3 has no ball of the missing color, stage from wherever it is:
 
 - From row 2 at the wrong offset: rotate `B` to carry the ball to `B2` or
   `E2`, lift it into row 3 with `bl` (`B2` to `C3` or `E2` to `A3`), and
-  re-enter step 2.
-- From row 4: use the insertion tool `K = (A4 E2 C3)` defined below, which
+  continue from item 2 of the recipe.
+- From row 4: use the insertion tool `K = (A4 E2 C3)` defined above, which
   carries `A4` straight to `E2` while fixing the cap and all of row 1.
   First turn `B` so a duplicate sits at the pinned seat `A1`; the offset is
   frozen once the ball lands, so this turn must come before `K`. Then aim
@@ -160,40 +198,6 @@ carries the blue to `B1` and the yellow to `C2`, and `bll` finishes with
 yellow at `E1` and the spare blue parked at `D2`.
 
 ![One row-1 trade: spot, stage, aim, insert with bll](compact-row1-arranging.svg)
-
-## Turn `C` into an insertion tool
-
-The numbered cycle `(11,13,18)` is
-
-```text
-C = (C3 E3 E2).
-```
-
-For column building, use its conjugate
-
-```text
-K = tr C tl
-  = tr (Tl bll Tl br Trr br) tl
-  = (A4 E2 C3).
-```
-
-The initial `tr` and final `tl` are setup and undo moves, not a second
-algorithm to memorize. One application of `K` moves the contents as follows:
-
-| From | To |
-|---|---|
-| `A4` | `E2` |
-| `E2` | `C3` |
-| `C3` | `A4` |
-
-`K` therefore inserts a ball from `A4` into `E2`. Applying `K` twice inserts
-a ball from `C3` into `E2`. All other positions are fixed.
-
-![The insertion tool K cycles the donor A4, the destination E2, and the buffer C3](compact-insertion-tool.svg)
-
-In general, if setup turns `S` carry a destination and donor to these working
-positions, perform `S K S^-1` or `S K^2 S^-1`. Since words are executed from
-left to right, undo the last setup turn first and reverse every direction.
 
 ## Step 2: align row 2, one column at a time
 
