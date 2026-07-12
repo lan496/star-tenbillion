@@ -239,11 +239,15 @@ round to repay.
 #### About the churn
 
 Every `b` click trades the seats `B1` and `E1` with `A2` and `D2`. The
-duplicate parked at `A1` is safe, but whatever else sits at `B1` or `E1`
-during a staging click swaps with row-2 balls. That is acceptable: a needed
-color swept out lands at `C2` or `A2` and becomes the staged ball of a later
-round. Only the set of five colors matters, because row 1 defines the
-targets.
+duplicate parked at `A1` is safe, but in the row-3 case the `bl` drop also
+swaps whatever sits at `B1` and `E1` with two row-2 balls. Tracing the whole
+round: the ball swept from `B1` finishes at `A2`, the ball swept from `E1`
+is lifted to `D3`, and the two row-2 balls that replaced them end at `A1`
+and `C1`. So one round can leave row 1 looking worse -- two wanted colors
+out, two unknown balls in -- and that is still fine: the displaced balls sit
+in row 2 and row 3, exactly where later rounds pick them up, and every round
+deterministically inserts one missing color and ejects one duplicate. Only
+the set of five colors matters, because row 1 defines the targets.
 
 When row 1 is nearly complete and every seat holds a needed ball, stage
 without `b` clicks instead: aim the missing ball to `A4` or `C3` and use `K`
