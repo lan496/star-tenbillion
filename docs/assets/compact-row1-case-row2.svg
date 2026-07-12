@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1080" height="620" viewBox="0 0 1080 620" role="img" aria-labelledby="title desc">
-  <title id="title">Row-1 arranging: the row-2 case by offset</title>
+  <title id="title">Row-1 arranging: the direct route by offset</title>
   <desc id="desc">Three alternative starting offsets when the missing ball is already in row 2: just right of a duplicate, just left, or any other offset that reduces to the drop route.</desc>
   <defs>
     <style>
@@ -26,7 +26,7 @@
   </defs>
 
   <rect width="1080" height="620" rx="24" fill="#f7f9fc"/>
-  <text x="42" y="48" class="title">Row-2 case: pick the route by offset</text>
+  <text x="42" y="48" class="title">Direct route: pick by offset</text>
   <text x="42" y="76" class="note" style="text-anchor:start">Blue is duplicated in row 1 (the dashed ring marks the copy to trade out); the missing yellow already sits in row 2. The three panels are alternatives.</text>
 
   <g transform="translate(70 105)">

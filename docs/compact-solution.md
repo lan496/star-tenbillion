@@ -186,12 +186,24 @@ side for definiteness; the mirror (swap `A1 A3 B2 bll` for `D1 D3 E2 brr`)
 works symmetrically.
 
 Repeat the following round while a color appears twice in row 1: spot a
-duplicated color in row 1 and a missing color in rows 2-4, then follow the
-route for the row that holds the missing ball. Each round places exactly
-one missing color, so one round never finishes row 1 by itself; expect up
-to four rounds.
+duplicated color in row 1 and a missing color in rows 2-4, then pick a
+route. Where the ball sits does not dictate the route -- most locations
+have a cheap option and a churn-free option:
 
-#### Drop route: the missing ball is in row 3
+| Missing ball at | Cheapest route | Churn-free route |
+|---|---|---|
+| row 2, one column from a duplicate | direct | direct |
+| row 2, elsewhere | `bl` lift, then drop | `K` lift from `E2`, then K |
+| row 3 | drop | K, staged with `K K` |
+| row 4 | K | K |
+
+Each round places exactly one missing color, so one round never finishes
+row 1 by itself; expect up to four rounds.
+
+#### Drop route: stage with a `bl` drop
+
+The shortest staging when the missing ball is in row 3, at the price of
+churning two other row-1 seats.
 
 1. Turn `B` until a duplicate sits at `A1`. That seat is pinned, so the
    duplicate survives the staging click.
@@ -224,14 +236,18 @@ ball at `C3`, the duplicate is already parked: `Trr` aims the yellow to
 
 ![One row-1 trade: spot, stage, aim, insert with bll](assets/compact-row1-arranging.svg)
 
-#### Direct route: the missing ball is already in row 2
+#### Direct route: rotate and trade
+
+No staging at all: usable when the missing ball already sits in row 2 one
+column from a duplicate.
 
 - Just right of a duplicate (duplicate at `X1`, ball at `(X+1)2`)? Turn `B`
   until the pair reaches `B1` and `C2`, then `bll`.
 - Just left of a duplicate? Turn `B` until the pair reaches `E1` and `D2`,
   then `brr`.
-- Any other offset: turn `B` until the ball is at `B2` or `E2`, lift it into
-  row 3 with `bl` (`B2` to `C3`, `E2` to `A3`), and use the drop route.
+- Any other offset: restage per the table -- lift with `bl` (`B2` to `C3`,
+  `E2` to `A3`) for the drop route, or carry the ball to `E2` and apply `K`
+  once (`E2` to `C3`) for the K route.
 
 Row 1 changes as follows on the just-right route (duplicate `d*` at `D1`,
 missing `m` at `E2`); the just-left route mirrors it. There is no `bl` drop,
@@ -246,18 +262,25 @@ bll     z   y   w   x   m     m in at E1; d* out to D2
 
 ![The three row-2 offsets and the route each one takes](assets/compact-row1-case-row2.svg)
 
-#### K route: the missing ball is in row 4
+#### K route: stage with the insertion tool
+
+The churn-free staging: `K` and `K K` fix the cap and all of rows 1-2
+outside `E2`, so nothing is disturbed while the ball travels. It reaches
+every location -- a row-4 ball directly, a row-3 ball with `K K`, and a
+row-2 ball after a one-`K` lift from `E2` -- at the cost of more clicks.
+Prefer it once row 1 is nearly complete and every seat holds a needed ball.
 
 1. Turn `B` until a duplicate sits at `A1` -- before anything lands, because
    the spacing freezes at landing.
-2. Aim the ball to `A4` with `T`.
-3. Apply `K` from the insertion-tool section: it carries `A4` straight to
-   `E2` while fixing the cap and all of row 1.
+2. Aim the ball with `T`: to `A4` if it is in row 4, or to `C3` if it is in
+   row 3.
+3. Apply `K` (from `A4`) or `K K` (from `C3`): the ball lands at `E2` while
+   the cap and all of row 1 stay fixed.
 4. Turn `Br`: the duplicate rides `A1` to `E1`, the ball `E2` to `D2`.
 5. Apply `brr`.
 
-Row 1 changes as follows; `K` never touches it, so as in the row-2 case
-every seat stays known:
+Row 1 changes as follows (shown for a row-4 ball); `K` never touches it, so
+as in the direct route every seat stays known:
 
 ```text
         A1  B1  C1  D1  E1
@@ -273,7 +296,7 @@ duplicate at `D1` instead and finishes with `Brr` and `bll`. A raw `t` click
 also drops `A4` to `B3`, but it trades one cap ball and costs an extra `tll`
 round to repay.
 
-![The row-4 case: normalize, aim, insert with K, trade](assets/compact-row1-case-row4.svg)
+![The K route on a row-4 ball: normalize, aim, insert with K, trade](assets/compact-row1-case-row4.svg)
 
 #### About the churn
 
@@ -288,19 +311,11 @@ in row 2 and row 3, exactly where later rounds pick them up, and every round
 deterministically inserts one missing color and ejects one duplicate. Only
 the set of five colors matters, because row 1 defines the targets.
 
-When row 1 is nearly complete and every seat holds a needed ball, stage
-without `b` clicks instead: aim the missing ball to `A4` or `C3` and use `K`
-or `K K`, which fix rows 1 and 2 outside `E2`, then finish with the `B` turn
-and the final trade as above. Even a row-2 ball at a wrong offset joins
-churn-free this way: carry it to `E2` with `B`, apply `K` once (`E2` to
-`C3`), and stage back with `K K`. This costs more clicks but never disturbs
-the finished seats.
-
 This also settles how many rounds row 1 needs. A churn-free round (direct
-route, K route, or K-staged drop) raises the number of distinct row-1
-colors by exactly one, so at most four such rounds arrange row 1 from any
-scramble. Drop-route rounds are cheaper per round, but their churn can
-displace wanted colors and add rounds.
+or K route) raises the number of distinct row-1 colors by exactly one, so
+at most four such rounds arrange row 1 from any scramble. Drop-route rounds
+are cheaper per round, but their churn can displace wanted colors and add
+rounds.
 
 ## Step 2: align row 2, one column at a time
 

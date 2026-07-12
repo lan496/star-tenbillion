@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1080" height="620" viewBox="0 0 1080 620" role="img" aria-labelledby="title desc">
-  <title id="title">Row-1 arranging: the row-4 case staged with K</title>
+  <title id="title">Row-1 arranging: the K route on a row-4 ball</title>
   <desc id="desc">Four states: park a duplicate at the pinned seat A1, aim the missing ball to A4, apply K so it lands at E2 without touching row 1, then finish with Br and brr.</desc>
   <defs>
     <style>
@@ -28,7 +28,7 @@
   </defs>
 
   <rect width="1080" height="620" rx="24" fill="#f7f9fc"/>
-  <text x="42" y="48" class="title">Row-4 case: stage with K, then trade</text>
+  <text x="42" y="48" class="title">K route: stage with K, then trade</text>
   <text x="42" y="76" class="note" style="text-anchor:start">Blue is duplicated in row 1, yellow is missing and stuck in row 4; dark grey balls are the K buffers; the dashed ring marks the copy to trade out.</text>
 
   <g class="arrow"><path d="M260 318 L292 318"/><path d="M520 318 L552 318"/><path d="M780 318 L812 318"/></g>
