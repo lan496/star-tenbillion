@@ -82,6 +82,35 @@ as `tr ... tl` so the cap returns intact. This ordering is a convenience, not
 a prerequisite: cap balls are indistinguishable, so take any shortcut the
 scramble offers.
 
+### Filling the cap
+
+Each `t` click trades cap balls with row 4 at fixed slots:
+
+| Move | Inserts into cap | Ejects from cap |
+|---|---|---|
+| `tl` | `B4` to `C5` and `E4` to `A5` | `A5` to `B4` and `E5` to `E4` |
+| `tll` | `B4` to `E5` only | `C5` to `E4` only |
+| `trr` | `E4` to `C5` only | `E5` to `B4` only |
+
+`tll` is the cap's single-ball insertion tool: it swaps exactly one ball in
+from `B4` and one out from `C5`, while the other two cap balls only cycle
+among themselves. This gives a uniform recipe:
+
+1. Stage an odd-color ball into row 4, lifting it with `b` clicks and a `t`
+   click as needed; nothing is final yet, so free churn is fine.
+2. Rotate the top disc with `T`, which never touches the cap, until that ball
+   sits at `B4`.
+3. Insert with `tll`. The ejected ball lands at `E4`; rotate it out of the
+   way during the next aim.
+4. Repeat three times. Each `tll` also cycles `A5` to `C5`, so the remaining
+   wrong ball always reaches the `C5` ejection seat in time, and three
+   insertions fill the cap exactly.
+
+When two odd-color balls are already in row 4, rotate them to `B4` and `E4`
+and a single `tl` inserts both at once; finish with the third ball at `E4`
+and `trr`. Ordering within the cap never matters because the three balls are
+identical.
+
 ![Four milestones of the row-by-row solve with the single algorithm](compact-solve-phases.svg)
 
 ## Turn `C` into an insertion tool
