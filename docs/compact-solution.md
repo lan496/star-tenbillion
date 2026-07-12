@@ -164,6 +164,8 @@ Row 1 mirrors the cap one level down. Every `b` click fixes `A1`, `C1`, and
 | `bll` | `C2` to `E1` only | `B1` to `D2` only |
 | `brr` | `D2` to `B1` only | `E1` to `C2` only |
 
+![The rows 1-2 trades of bl, bll, and brr](compact-row1-trades.svg)
+
 While a color appears twice in row 1, trade one copy for a missing color
 with `bll`:
 

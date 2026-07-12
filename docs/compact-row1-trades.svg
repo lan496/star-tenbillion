@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="500" viewBox="0 0 1080 500" role="img" aria-labelledby="title desc">
+  <title id="title">The three row-1 trade clicks</title>
+  <desc id="desc">Three board diagrams showing how bl, bll, and brr trade balls between row 2 and the row-1 seats B1 and E1, while A1, C1, and D1 stay fixed.</desc>
+  <defs>
+    <style>
+      .title { font: 700 28px system-ui, sans-serif; fill: #172033; }
+      .heading { font: 700 20px ui-monospace, monospace; fill: #7851b8; }
+      .note { font: 14px system-ui, sans-serif; fill: #58657d; }
+      .caption { font: 14px system-ui, sans-serif; fill: #58657d; text-anchor: middle; }
+      .column { font: 700 13px system-ui, sans-serif; fill: #58657d; text-anchor: middle; }
+      .rowlab { font: 700 12px system-ui, sans-serif; fill: #8795ab; text-anchor: end; }
+    </style>
+    <marker id="ar-purple" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 L9 4.5 L0 9 Z" fill="#7851b8"/></marker>
+    <g id="board3">
+      <g fill="#f5f7fb" stroke="#a9b4c7" stroke-width="2">
+        <circle cx="20" cy="20" r="13"/><circle cx="110" cy="20" r="13"/><circle cx="200" cy="20" r="13"/>
+        <circle cx="20" cy="60" r="13"/><circle cx="65" cy="60" r="13"/><circle cx="110" cy="60" r="13"/><circle cx="155" cy="60" r="13"/><circle cx="200" cy="60" r="13"/>
+        <circle cx="20" cy="100" r="13"/><circle cx="65" cy="100" r="13"/><circle cx="110" cy="100" r="13"/><circle cx="155" cy="100" r="13"/><circle cx="200" cy="100" r="13"/>
+        <circle cx="20" cy="140" r="13"/><circle cx="65" cy="140" r="13"/><circle cx="110" cy="140" r="13"/><circle cx="155" cy="140" r="13"/><circle cx="200" cy="140" r="13"/>
+        <circle cx="20" cy="180" r="13"/><circle cx="65" cy="180" r="13"/><circle cx="110" cy="180" r="13"/><circle cx="155" cy="180" r="13"/><circle cx="200" cy="180" r="13"/>
+      </g>
+      <g class="rowlab">
+        <text x="-26" y="24">5</text><text x="-26" y="64">4</text><text x="-26" y="104">3</text><text x="-26" y="144">2</text><text x="-26" y="184">1</text>
+      </g>
+      <g class="column"><text x="20" y="215">A</text><text x="65" y="215">B</text><text x="110" y="215">C</text><text x="155" y="215">D</text><text x="200" y="215">E</text></g>
+      <g fill="none" stroke="#7851b8" stroke-width="2">
+        <circle cx="20" cy="140" r="13"/><circle cx="65" cy="180" r="13"/><circle cx="110" cy="140" r="13"/><circle cx="155" cy="140" r="13"/><circle cx="200" cy="180" r="13"/>
+      </g>
+    </g>
+  </defs>
+
+  <rect width="1080" height="500" rx="24" fill="#f7f9fc"/>
+  <text x="42" y="48" class="title">The three row-1 trade clicks</text>
+  <text x="42" y="76" class="note">Purple positions and arrows show the rows 1-2 cycle of each click; the rows 2-3 shuffle is not drawn. A1, C1, and D1 never move.</text>
+
+  <g transform="translate(25 105)">
+    <rect width="330" height="360" rx="18" fill="#ffffff" stroke="#dbe2ee"/>
+    <text x="28" y="40" class="heading">bl</text>
+    <g transform="translate(55 84)"><use href="#board3"/>
+      <g fill="none" stroke="#7851b8" stroke-width="2.5" marker-end="url(#ar-purple)">
+        <path d="M29 150 L 55 171"/>
+        <path d="M74 171 L 100 150"/>
+        <path d="M126 140 L 140 140"/>
+        <path d="M164 150 L 190 171"/>
+        <path d="M186 173 C 150 160, 68 160, 32 149"/>
+      </g>
+    </g>
+    <text x="165" y="326" class="caption">Double trade: A2 and D2 drop in at B1</text>
+    <text x="165" y="346" class="caption">and E1; B1 and E1 lift out to C2 and A2.</text>
+  </g>
+
+  <g transform="translate(375 105)">
+    <rect width="330" height="360" rx="18" fill="#ffffff" stroke="#dbe2ee"/>
+    <text x="28" y="40" class="heading">bll</text>
+    <g transform="translate(55 84)"><use href="#board3"/>
+      <g fill="none" stroke="#7851b8" stroke-width="2.5" marker-end="url(#ar-purple)">
+        <path d="M33 132 Q 65 118 97 132"/>
+        <path d="M121 148 L 188 172"/>
+        <path d="M187 190 Q 130 210 77 189"/>
+        <path d="M76 172 L 143 148"/>
+        <path d="M143 149 C 100 162, 62 162, 32 149"/>
+      </g>
+    </g>
+    <text x="165" y="326" class="caption">Single trade: C2 drops in at E1 and B1</text>
+    <text x="165" y="346" class="caption">lifts out to D2; E1 slides to B1 inside row 1.</text>
+  </g>
+
+  <g transform="translate(725 105)">
+    <rect width="330" height="360" rx="18" fill="#ffffff" stroke="#dbe2ee"/>
+    <text x="28" y="40" class="heading">brr</text>
+    <g transform="translate(55 84)"><use href="#board3"/>
+      <g fill="none" stroke="#7851b8" stroke-width="2.5" marker-end="url(#ar-purple)">
+        <path d="M97 132 Q 65 118 33 132"/>
+        <path d="M33 149 C 62 162, 100 162, 142 149"/>
+        <path d="M144 149 L 78 171"/>
+        <path d="M78 190 Q 130 210 188 189"/>
+        <path d="M189 172 L 122 149"/>
+      </g>
+    </g>
+    <text x="165" y="326" class="caption">Mirror trade: D2 drops in at B1 and E1</text>
+    <text x="165" y="346" class="caption">lifts out to C2; B1 slides to E1 inside row 1.</text>
+  </g>
+</svg>
