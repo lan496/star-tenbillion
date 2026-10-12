@@ -15,6 +15,9 @@ repl = "gap -q"
 build-optimal = "rustc --edition=2024 -C opt-level=3 -D warnings src/optimal_number.rs -o .pixi/optimal-number"
 optimal = { cmd = ".pixi/optimal-number", depends-on = ["build-optimal"] }
 test-optimal = { cmd = ".pixi/optimal-number --self-test", depends-on = ["build-optimal"] }
+build-full-ball = "rustc --edition=2024 -C opt-level=3 -D warnings src/full_ball.rs -o .pixi/full-ball"
+full-ball = { cmd = ".pixi/full-ball fifth 12 && .pixi/full-ball disc 8", depends-on = ["build-full-ball"] }
+test-full-ball = { cmd = ".pixi/full-ball --self-test", depends-on = ["build-full-ball"] }
 
 [dependencies]
 gap = "*"

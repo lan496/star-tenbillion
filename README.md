@@ -9,7 +9,7 @@ The main machine-checked results:
   `A_23`, so every color arrangement is reachable.
 - A single mirrored six-move algorithm, `C = Tl bll Tl | br Trr br`, is a pure
   3-cycle, and an exhaustive search proves that no shorter one exists.
-- God's number is at least 16 fifth-turn clicks and at least 15 disc turns.
+- God's number is at least 19 fifth-turn clicks and at least 15 disc turns.
 
 ## Run the analysis
 
@@ -22,7 +22,9 @@ pixi run test             # GAP model self-tests
 pixi run compact          # verify the compact 3-cycle
 pixi run search-compact   # prove its minimality
 pixi run test-optimal     # self-test the quotient search
-pixi run optimal          # lower bounds for God's number
+pixi run optimal          # quotient lower bounds for God's number
+pixi run test-full-ball   # self-test the full-puzzle search
+pixi run full-ball        # exact small distances and counting bounds
 ```
 
 GAP and Rust versions are locked in `pixi.lock`; nothing needs to be
@@ -36,7 +38,7 @@ installed globally.
 | [Group structure](docs/group-structure.md) | GAP proof that the move group is `A_23`, and the state counts |
 | [Compact solution](docs/compact-solution.md) | One six-move 3-cycle, its proved minimality, and a row-by-row solve built on it |
 | [Three-algorithm solution](docs/three-algorithm-solution.md) | The Pedro Luis column-by-column method with three reusable cycles |
-| [Optimal number](docs/optimal-number.md) | Metrics, the exact quotient search, and the God's-number lower bounds |
+| [Optimal number](docs/optimal-number.md) | Metrics, the counting bound, the exact quotient search, and the God's-number lower bounds |
 
 ## Sources
 
